@@ -1,0 +1,85 @@
+.animated-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    overflow: hidden;
+    background-color: var(--bg-primary);
+}
+
+.orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.5;
+    animation: float 20s infinite ease-in-out;
+}
+
+[data-theme="dark"] .orb {
+    opacity: 0.3;
+}
+
+[data-theme="light"] .orb {
+    opacity: 0.15;
+}
+
+.orb-1 {
+    width: 40vw;
+    height: 40vw;
+    background: radial-gradient(circle, var(--accent-red) 0%, rgba(255, 51, 51, 0) 70%);
+    top: -10vw;
+    left: -10vw;
+    animation-delay: 0s;
+}
+
+.orb-2 {
+    width: 50vw;
+    height: 50vw;
+    background: radial-gradient(circle, #3399ff 0%, rgba(51, 153, 255, 0) 70%);
+    bottom: -20vw;
+    right: -10vw;
+    animation-delay: -5s;
+}
+
+.orb-3 {
+    width: 30vw;
+    height: 30vw;
+    background: radial-gradient(circle, #9933ff 0%, rgba(153, 51, 255, 0) 70%);
+    top: 40vh;
+    left: 30vw;
+    animation-delay: -10s;
+}
+
+.grid-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 50px 50px;
+    mask-image: radial-gradient(circle at center, black 40%, transparent 100%);
+    -webkit-mask-image: radial-gradient(circle at center, black 40%, transparent 100%);
+}
+
+@keyframes float {
+    0% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    33% {
+        transform: translate(30px, -50px) scale(1.1);
+    }
+
+    66% {
+        transform: translate(-20px, 20px) scale(0.9);
+    }
+
+    100% {
+        transform: translate(0, 0) scale(1);
+    }
+}

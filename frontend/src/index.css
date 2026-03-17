@@ -1,0 +1,140 @@
+:root {
+  --bg-primary: #050505;
+  --bg-secondary: #121212;
+  --text-primary: #ffffff;
+  --text-secondary: #a0a0a0;
+  --accent-red: #ff3333;
+  --accent-glow: rgba(255, 51, 51, 0.4);
+  --glass-bg: rgba(25, 25, 25, 0.6);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --font-main: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+[data-theme="light"] {
+  --bg-primary: #f4f6f9;
+  --bg-secondary: #ffffff;
+  --text-primary: #1e293b;
+  --text-secondary: #64748b;
+  --accent-red: #e11d48;
+  --accent-glow: rgba(225, 29, 72, 0.25);
+  --glass-bg: rgba(255, 255, 255, 0.75);
+  --glass-border: rgba(15, 23, 42, 0.08);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-main);
+  line-height: 1.6;
+  overflow-x: hidden;
+  background-image:
+    radial-gradient(circle at 15% 50%, rgba(255, 51, 51, 0.05), transparent 25%),
+    radial-gradient(circle at 85% 30%, rgba(51, 153, 255, 0.05), transparent 25%);
+  background-attachment: fixed;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.3s ease;
+}
+
+ul {
+  list-style: none;
+}
+
+/* Glassmorphism Utility */
+.glass-panel {
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.section-title span {
+  color: var(--accent-red);
+  text-shadow: 0 0 20px var(--accent-glow);
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.8rem 1.8rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+  font-family: inherit;
+}
+
+.btn-primary {
+  background: var(--accent-red);
+  color: white;
+  box-shadow: 0 4px 15px var(--accent-glow);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px var(--accent-glow);
+  background: #ff4747;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.8s ease forwards;
+}
+
+/* Scroll wheel animation for skills */
+.auto-scroll {
+  display: flex;
+  overflow: hidden;
+  white-space: nowrap;
+  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+.skill-track {
+  display: flex;
+  animation: scroll 30s linear infinite;
+}
+
+.skill-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
