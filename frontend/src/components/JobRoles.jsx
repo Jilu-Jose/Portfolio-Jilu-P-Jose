@@ -1,13 +1,13 @@
-import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope, FaGlobe } from 'react-icons/fa';
+import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope } from 'react-icons/fa';
 import './JobRoles.css';
 
 const rolesData = [
-    { title: 'Data Scientist', subtitle: 'Target Role', desc: 'Predictive modeling, deep data analytics, and uncovering actionable insights.' },
-    { title: 'Data Analyst', subtitle: 'Target Role', desc: 'Interpreting complex data to help businesses strategize effectively and scale.' },
-    { title: 'ML Engineer', subtitle: 'Target Role', desc: 'Designing and deploying scalable machine learning algorithms into production.' },
-    { title: 'MLOps Engineer', subtitle: 'Target Role', desc: 'Streamlining deployment and operations of robust ML models in the cloud.' },
-    { title: 'RPA Developer', subtitle: 'Target Role', desc: 'Automating critical business processes to increase systemic operational efficiency.' },
-    { title: 'MERN Developer', subtitle: 'Target Role', desc: 'Building dynamic full-stack web applications using modern web technologies.' }
+    { title: 'Data Scientist', subtitle: 'Target Role', desc: 'Predictive modeling, deep data analytics, and actionable insights.' },
+    { title: 'Data Analyst', subtitle: 'Target Role', desc: 'Interpreting complex data to help businesses strategize effectively.' },
+    { title: 'ML Engineer', subtitle: 'Target Role', desc: 'Designing and deploying scalable machine learning algorithms.' },
+    { title: 'MLOps Engineer', subtitle: 'Target Role', desc: 'Streamlining deployment and operations of robust ML models in cloud.' },
+    { title: 'RPA Developer', subtitle: 'Target Role', desc: 'Automating critical business processes to increase operational efficiency.' },
+    { title: 'MERN Developer', subtitle: 'Target Role', desc: 'Building dynamic full-stack web applications using modern web tech.' }
 ];
 
 const JobRoles = () => {
@@ -15,32 +15,63 @@ const JobRoles = () => {
         <section id="roles" className="roles-section">
             <h2 className="section-title">Eligible Job <span>Roles</span></h2>
             <div className="roles-grid">
-                {rolesData.map((role, index) => (
-                    <div className="role-card-bc animate-fade-in" key={index} style={{ animationDelay: `${index * 0.1}s` }}>
-                        {/* Unified red geometric shape */}
-                        <div className="rc-shape"></div>
-                        
-                        <div className="rc-top-left">
-                            <h3 className="rc-title">{role.title}</h3>
-                            <p className="rc-subtitle">{role.subtitle}</p>
-                            <div className="rc-line"></div>
-                        </div>
+                {rolesData.map((role, index) => {
+                    const titleParts = role.title.split(' ');
+                    const firstWord = titleParts[0];
+                    const restWords = titleParts.slice(1).join(' ');
 
-                        <div className="rc-icons-overlay">
-                            <FaMapMarkerAlt />
-                            <FaPhoneAlt />
-                            <FaEnvelope />
-                            <FaGlobe />
+                    return (
+                        <div className="role-card-lightdark animate-fade-in" key={index} style={{ animationDelay: `${index * 0.1}s` }}>
+                            <div className="rc-red-layer"></div>
+                            
+                            <div className="rc-white-layer">
+                                <div className="rc-header">
+                                    <h3 className="rc-title-ld">
+                                        <span className="text-black">{firstWord}</span> <span className="text-red">{restWords}</span>
+                                    </h3>
+                                    <p className="rc-subtitle-ld">{role.subtitle}</p>
+                                </div>
+                                <div className="rc-contacts-ld">
+                                    <div className="contact-item">
+                                        <div className="contact-icon bg-dark"><FaPhoneAlt /></div>
+                                        <div className="contact-text">
+                                            <span>+91 98765 43210</span>
+                                            <span>+91 98765 43210</span>
+                                        </div>
+                                    </div>
+                                    <div className="contact-item">
+                                        <div className="contact-icon bg-dark"><FaEnvelope /></div>
+                                        <div className="contact-text">
+                                            <span>info@jilupjose.com</span>
+                                            <span>www.jilupjose.com</span>
+                                        </div>
+                                    </div>
+                                    <div className="contact-item">
+                                        <div className="contact-icon bg-red"><FaMapMarkerAlt /></div>
+                                        <div className="contact-text">
+                                            <span>Available for</span>
+                                            <span>Remote / Hybrid</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            {/* Dark Side Content */}
+                            <div className="rc-dark-content">
+                                <div className="hexagon-wrapper">
+                                    <div className="red-hexagon">
+                                        <div className="red-hexagon-inner"></div>
+                                    </div>
+                                </div>
+                                <h4 className="dark-title">{role.title}</h4>
+                                <p className="dark-subtitle">CORE RESPONSIBILITY</p>
+                                <div className="dark-desc-box">
+                                    {role.desc}
+                                </div>
+                            </div>
                         </div>
-
-                        <div className="rc-bottom-right">
-                            <p className="rc-desc">{role.desc}</p>
-                            <p className="rc-contact">+00 1234 5XXX 9012</p>
-                            <p className="rc-contact">info@jilupjose.com</p>
-                            <p className="rc-contact">www.jilupjose.com</p>
-                        </div>
-                    </div>
-                ))}
+                    );
+                })}
             </div>
         </section>
     );
