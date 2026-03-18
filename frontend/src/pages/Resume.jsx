@@ -7,7 +7,7 @@ const Resume = () => {
             <div className="resume-header">
                 <h1 className="section-title">My <span>Resume</span></h1>
                 <p className="resume-subtitle">View my qualifications and professional experience.</p>
-                <a href="/cv.pdf" download="Jilu_P_Jose_CV.pdf" className="btn btn-primary download-btn">
+                <a href="/Jilu%20P%20Jose%20CV.pdf" download="Jilu_P_Jose_CV.pdf" className="btn btn-primary download-btn">
                     <FaDownload /> Download PDF
                 </a>
             </div>
@@ -17,12 +17,12 @@ const Resume = () => {
                     If the PDF does not load below, please use the download button above.
                 </p>
                 <object 
-                    data="/cv.pdf" 
+                    data="/Jilu%20P%20Jose%20CV.pdf" 
                     type="application/pdf" 
                     className="resume-viewer"
                 >
                     <p>It appears your browser does not support embedded PDFs. 
-                    <a href="/cv.pdf" download="Jilu_P_Jose_CV.pdf">Click here to download it.</a></p>
+                    <a href="/Jilu%20P%20Jose%20CV.pdf" download="Jilu_P_Jose_CV.pdf">Click here to download it.</a></p>
                 </object>
             </div>
         </div>

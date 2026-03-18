@@ -15,13 +15,17 @@ const Certifications = () => {
             <h2 className="section-title">Certifi<span>cations</span></h2>
             <div className="cert-grid">
                 {certs.map((cert, index) => (
-                    <div className="cert-card glass-panel animate-fade-in" key={index} style={{ animationDelay: `${index * 0.15}s` }}>
-                        <div className="cert-img-wrapper">
-                            <img src={cert.image} alt={cert.title} />
+                    <div className="cert-card-diagonal" key={index} style={{ animationDelay: `${index * 0.15}s` }}>
+                        <div className="cert-red-layer"></div>
+                        <div className="cert-dark-layer">
+                            <div className="cert-img-wrapper">
+                                <img src={cert.image} alt={cert.title} />
+                            </div>
                         </div>
-                        <div className="cert-info">
+                        <div className="cert-content">
                             <h3>{cert.title}</h3>
                             <p>{cert.provider}</p>
+                            <div className="cert-line"></div>
                         </div>
                     </div>
                 ))}
