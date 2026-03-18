@@ -13,41 +13,99 @@
 .skill-track {
     gap: 2rem;
     padding-left: 2rem;
+    /* We assume this is inside an auto-scroll container, 
+       but we are styling the inner cards here */
 }
 
+/* Base card styling */
 .skill-card {
-    min-width: 160px;
-    max-width: 160px;
+    min-width: 240px;
+    max-width: 240px;
+    height: 140px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     padding: 1.5rem;
-    transition: transform 0.3s ease, border-color 0.3s ease;
+    background-color: #121212; /* Very dark background */
+    position: relative;
     cursor: pointer;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 4px;
 }
+
+/* Creating the angular red accent on the left using a pseudo-element */
+.skill-card::before {
+    content: '';
+    position: absolute;
+    left: -20px;
+    top: -20%;
+    height: 140%;
+    width: 60px;
+    background-color: #ff0000; /* Vibrant red */
+    /* Creating the 'V' or Chevron shape pointing right */
+    clip-path: polygon(0 0, 100% 50%, 0 100%);
+    z-index: 1;
+    transition: width 0.3s ease;
+}
+
+/* Alternatively, for a more accurate angled ribbon matching the image strictly: */
+.skill-card::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 100%;
+    width: 50px;
+    background-image: linear-gradient(to right, #ff0000 0%, #cc0000 100%);
+    clip-path: polygon(0 0, 100% 0, 40% 50%, 100% 100%, 0 100%);
+    z-index: 2;
+    transition: width 0.3s ease;
+}
+
 
 .skill-card:hover {
-    transform: translateY(-10px) scale(1.05);
-    border-color: var(--accent-red);
-    box-shadow: 0 10px 30px var(--accent-glow);
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(255, 0, 0, 0.2);
 }
 
+.skill-card:hover::after {
+    width: 60px; /* Slight expansion on hover */
+}
+
+/* Ensuring content sits above the red accent */
 .skill-card img {
-    width: 60px;
-    height: 60px;
+    width: 45px;
+    height: 45px;
     object-fit: contain;
-    margin-bottom: 1rem;
-    transition: filter 0.3s ease;
+    margin-bottom: 0.8rem;
+    z-index: 5;
+    position: relative;
+    transition: filter 0.3s ease, transform 0.3s ease;
+    filter: drop-shadow(0 0 5px rgba(255,255,255,0.1));
 }
 
 .skill-card h3 {
-    font-size: 1rem;
-    font-weight: 500;
-    color: var(--text-primary);
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #ffffff;
     text-align: center;
+    z-index: 5;
+    position: relative;
 }
 
 .skill-card:hover img {
-    filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.4));
+    filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.6));
+    transform: scale(1.1);
+}
+
+/* Overriding the default glass panel applied elsewhere if it exists on .glass-panel */
+.skill-card.glass-panel {
+    border: none;
+    backdrop-filter: none;
 }

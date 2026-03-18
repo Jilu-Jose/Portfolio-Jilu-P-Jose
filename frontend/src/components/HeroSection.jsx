@@ -10,8 +10,8 @@ const HeroSection = () => {
                     <span className="name-highlight">JILU P. JOSE</span> IS HERE TO BE YOUR ASSISTANCE
                 </h1>
                 <p className="description-new">
-                    I am here ready to help you in making creative digital products.
-                    Transforming data into actionable insights through advanced analytics and machine learning.
+                    Delivering scalable, intelligent, and data-driven solutions. 
+                    Transforming raw data into actionable insights through advanced analytics and machine learning.
                 </p>
                 <div className="hero-actions">
                     <button className="discuss-btn">Let's Discuss</button>

@@ -5,7 +5,7 @@
     align-items: center;
     justify-content: space-between;
     padding: 0 5%;
-    background: #050505; /* Deep dark background */
+    background: #050505; /* Solid deep dark background */
     position: relative;
     overflow: hidden;
     color: #e6edf3; /* Light text for dark bg */
@@ -35,7 +35,7 @@
 }
 
 .name-highlight {
-    color: #e6005c; /* Pinkish red stands out on dark */
+    color: #ff0055; /* Vibrant Red */
 }
 
 .description-new {
@@ -55,7 +55,7 @@
 }
 
 .discuss-btn {
-    background-color: #e6005c;
+    background-color: #ff0055;
     color: white;
     border: none;
     padding: 12px 30px;
@@ -63,13 +63,13 @@
     font-size: 1rem;
     font-weight: 600;
     cursor: pointer;
-    box-shadow: 0 10px 20px rgba(230, 0, 92, 0.4);
+    box-shadow: 0 10px 20px rgba(255, 0, 85, 0.4);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .discuss-btn:hover {
     transform: translateY(-3px);
-    box-shadow: 0 15px 25px rgba(230, 0, 92, 0.6);
+    box-shadow: 0 15px 25px rgba(255, 0, 85, 0.6);
 }
 
 .social-links-inline {
@@ -94,8 +94,8 @@
 }
 
 .social-icon-new:hover {
-    background: #e6005c;
-    border-color: #e6005c;
+    background: #ff0055;
+    border-color: #ff0055;
     color: white;
     transform: scale(1.1);
 }
@@ -116,7 +116,7 @@
     position: relative;
     width: 450px;
     height: 450px;
-    background: #e6005c; /* Main pink blob */
+    background: #ff0055; /* Main vibrant red blob */
     border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
     transition: border-radius 1s ease-in-out;
     animation: blobMorph 8s infinite alternate;
@@ -218,7 +218,7 @@
 }
 
 .fc-icon.bg-pink {
-    background: #e6005c;
+    background: #ff0055;
     color: white;
 }
 
