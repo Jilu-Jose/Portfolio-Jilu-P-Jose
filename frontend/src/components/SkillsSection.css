@@ -17,95 +17,120 @@
        but we are styling the inner cards here */
 }
 
-/* Base card styling */
-.skill-card {
+/* Base card styling for two-tone layout */
+.skill-card-ld {
     min-width: 240px;
     max-width: 240px;
-    height: 140px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 1.5rem;
-    background-color: #121212; /* Very dark background */
+    height: 120px;
+    background-color: #262626; /* Dark right side (for logo) */
     position: relative;
     cursor: pointer;
     overflow: hidden;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border-radius: 4px;
+    box-shadow: 0 8px 15px rgba(0,0,0,0.4);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    border-radius: 6px;
+    border: 1px solid #333;
+    display: flex;
 }
 
-/* Creating the angular red accent on the left using a pseudo-element */
-.skill-card::before {
-    content: '';
-    position: absolute;
-    left: -20px;
-    top: -20%;
-    height: 140%;
-    width: 60px;
-    background-color: #ff0000; /* Vibrant red */
-    /* Creating the 'V' or Chevron shape pointing right */
-    clip-path: polygon(0 0, 100% 50%, 0 100%);
-    z-index: 1;
-    transition: width 0.3s ease;
-}
-
-/* Alternatively, for a more accurate angled ribbon matching the image strictly: */
-.skill-card::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    height: 100%;
-    width: 50px;
-    background-image: linear-gradient(to right, #ff0000 0%, #cc0000 100%);
-    clip-path: polygon(0 0, 100% 0, 40% 50%, 100% 100%, 0 100%);
-    z-index: 2;
-    transition: width 0.3s ease;
-}
-
-
-.skill-card:hover {
+.skill-card-ld:hover {
     transform: translateY(-5px);
-    box-shadow: 0 15px 30px rgba(255, 0, 0, 0.2);
+    box-shadow: 0 15px 25px rgba(255, 0, 51, 0.25);
+    border-color: #ff0033;
 }
 
-.skill-card:hover::after {
-    width: 60px; /* Slight expansion on hover */
+/* Red Background Chevron Divider */
+.sc-red-layer {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(135deg, #990011 0%, #ee0022 100%);
+    clip-path: polygon(0 0, 48% 0, 68% 50%, 48% 100%, 0 100%);
+    z-index: 2;
+    transition: clip-path 0.4s ease;
 }
 
-/* Ensuring content sits above the red accent */
-.skill-card img {
-    width: 45px;
-    height: 45px;
-    object-fit: contain;
-    margin-bottom: 0.8rem;
-    z-index: 5;
+/* White Layer Content Box */
+.sc-white-layer {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: #ffffff;
+    clip-path: polygon(0 0, 36% 0, 56% 50%, 36% 100%, 0 100%);
+    z-index: 3;
+    padding: 15px 20px;
+    transition: clip-path 0.4s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Hover effects for the geometry */
+.skill-card-ld:hover .sc-red-layer {
+    clip-path: polygon(0 0, 50% 0, 70% 50%, 50% 100%, 0 100%);
+}
+
+.skill-card-ld:hover .sc-white-layer {
+    clip-path: polygon(0 0, 42% 0, 62% 50%, 42% 100%, 0 100%);
+}
+
+/* Text on White Side */
+.sc-name {
+    font-size: 1rem;
+    font-weight: 800;
+    color: #111111;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 5px;
     position: relative;
-    transition: filter 0.3s ease, transform 0.3s ease;
+    z-index: 5;
+    max-width: 90px;
+}
+
+.sc-line {
+    height: 3px;
+    width: 30px;
+    background: #ff0022;
+    border-radius: 2px;
+    margin-bottom: 5px;
+}
+
+.sc-label {
+    font-size: 0.6rem;
+    color: #666666;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+/* Icon / Dark Side */
+.sc-dark-content {
+    position: absolute;
+    top: 0; right: 0; width: 45%; height: 100%;
+    z-index: 1;
+    display: flex;
+    align-items: center; justify-content: center;
+}
+
+.sc-icon-wrapper {
+    width: 55px; height: 55px;
+    background: #111111;
+    border-radius: 8px;
+    border: 2px solid #333333;
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.5);
+    transition: transform 0.4s ease, border-color 0.4s ease;
+}
+
+.skill-card-ld:hover .sc-icon-wrapper {
+    transform: scale(1.1) rotate(5deg);
+    border-color: #ff0033;
+}
+
+.sc-icon {
+    width: 35px;
+    height: 35px;
+    object-fit: contain;
     filter: drop-shadow(0 0 5px rgba(255,255,255,0.1));
 }
 
-.skill-card h3 {
-    font-size: 1.1rem;
-    font-weight: 700;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    color: #ffffff;
-    text-align: center;
-    z-index: 5;
-    position: relative;
-}
-
-.skill-card:hover img {
-    filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.6));
-    transform: scale(1.1);
-}
-
-/* Overriding the default glass panel applied elsewhere if it exists on .glass-panel */
-.skill-card.glass-panel {
-    border: none;
-    backdrop-filter: none;
+.skill-card-ld:hover .sc-icon {
+    filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.4));
 }

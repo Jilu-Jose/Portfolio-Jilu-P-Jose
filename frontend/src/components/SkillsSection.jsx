@@ -40,9 +40,20 @@ const SkillsSection = () => {
             <div className="skills-carousel auto-scroll">
                 <div className="skill-track">
                     {[...skills, ...skills].map((skill, index) => (
-                        <div className="skill-card glass-panel" key={index}>
-                            <img src={skill.icon} alt={skill.name} />
-                            <h3>{skill.name}</h3>
+                        <div className="skill-card-ld" key={index}>
+                            <div className="sc-red-layer"></div>
+                            
+                            <div className="sc-white-layer">
+                                <h3 className="sc-name">{skill.name}</h3>
+                                <div className="sc-line"></div>
+                                <span className="sc-label">Proficiency</span>
+                            </div>
+
+                            <div className="sc-dark-content">
+                                <div className="sc-icon-wrapper">
+                                    <img src={skill.icon} alt={skill.name} className="sc-icon" />
+                                </div>
+                            </div>
                         </div>
                     ))}
                 </div>
