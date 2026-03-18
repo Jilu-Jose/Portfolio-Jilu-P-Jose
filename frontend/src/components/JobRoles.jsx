@@ -1,12 +1,13 @@
+import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope, FaGlobe } from 'react-icons/fa';
 import './JobRoles.css';
 
 const rolesData = [
-    { title: 'Data Scientist', image: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=256&auto=format&fit=crop', desc: 'Analyzing complex data and building predictive models.' },
-    { title: 'Data Analyst', image: 'https://images.unsplash.com/photo-1614850523459-c2f4c699c52e?q=80&w=256&auto=format&fit=crop', desc: 'Interpreting data to help businesses make informed decisions.' },
-    { title: 'ML Engineer', image: 'https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?q=80&w=256&auto=format&fit=crop', desc: 'Designing and deploying scalable machine learning algorithms.' },
-    { title: 'MLOps Engineer', image: 'https://images.unsplash.com/photo-1634017839464-5c339ebe3cb4?q=80&w=256&auto=format&fit=crop', desc: 'Streamlining deployment and operations of ML models.' },
-    { title: 'RPA Developer', image: 'https://images.unsplash.com/photo-1614850715649-1d0106293bd1?q=80&w=256&auto=format&fit=crop', desc: 'Automating business processes using software robots.' },
-    { title: 'MERN Developer', image: 'https://images.unsplash.com/photo-1614849963640-9cc74b2a826f?q=80&w=256&auto=format&fit=crop', desc: 'Building full-stack web applications using robust modern tech.' }
+    { title: 'Data Scientist', subtitle: 'Target Role', desc: 'Predictive modeling, deep data analytics, and uncovering actionable insights.' },
+    { title: 'Data Analyst', subtitle: 'Target Role', desc: 'Interpreting complex data to help businesses strategize effectively and scale.' },
+    { title: 'ML Engineer', subtitle: 'Target Role', desc: 'Designing and deploying scalable machine learning algorithms into production.' },
+    { title: 'MLOps Engineer', subtitle: 'Target Role', desc: 'Streamlining deployment and operations of robust ML models in the cloud.' },
+    { title: 'RPA Developer', subtitle: 'Target Role', desc: 'Automating critical business processes to increase systemic operational efficiency.' },
+    { title: 'MERN Developer', subtitle: 'Target Role', desc: 'Building dynamic full-stack web applications using modern web technologies.' }
 ];
 
 const JobRoles = () => {
@@ -15,18 +16,28 @@ const JobRoles = () => {
             <h2 className="section-title">Eligible Job <span>Roles</span></h2>
             <div className="roles-grid">
                 {rolesData.map((role, index) => (
-                    <div className="role-card" key={index}>
-                        <div className="role-image-container">
-                            <img src={role.image} alt={role.title} className="role-image" />
+                    <div className="role-card-bc animate-fade-in" key={index} style={{ animationDelay: `${index * 0.1}s` }}>
+                        {/* Unified red geometric shape */}
+                        <div className="rc-shape"></div>
+                        
+                        <div className="rc-top-left">
+                            <h3 className="rc-title">{role.title}</h3>
+                            <p className="rc-subtitle">{role.subtitle}</p>
+                            <div className="rc-line"></div>
                         </div>
-                        <div className="role-content">
-                            <h3>{role.title}</h3>
-                            <p className="role-desc">{role.desc}</p>
+
+                        <div className="rc-icons-overlay">
+                            <FaMapMarkerAlt />
+                            <FaPhoneAlt />
+                            <FaEnvelope />
+                            <FaGlobe />
                         </div>
-                        <div className="role-footer">
-                            <a href="#learn-more" className="learn-more" onClick={(e) => e.preventDefault()}>
-                                Learn more <span className="arrow">&rarr;</span>
-                            </a>
+
+                        <div className="rc-bottom-right">
+                            <p className="rc-desc">{role.desc}</p>
+                            <p className="rc-contact">+00 1234 5XXX 9012</p>
+                            <p className="rc-contact">info@jilupjose.com</p>
+                            <p className="rc-contact">www.jilupjose.com</p>
                         </div>
                     </div>
                 ))}

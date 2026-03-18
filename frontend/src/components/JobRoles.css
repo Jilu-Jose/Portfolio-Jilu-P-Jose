@@ -3,6 +3,7 @@
     position: relative;
     z-index: 2;
     overflow: hidden;
+    background: #050505;
 }
 
 .roles-section .section-title {
@@ -12,106 +13,150 @@
 
 .roles-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 1.5rem;
-    max-width: 1400px;
+    grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+    gap: 2.5rem;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
-.role-card {
-    background: #0d1117; /* Very dark background */
-    border: 1px solid rgba(255, 255, 255, 0.08); /* Subtle border */
-    border-radius: 12px;
+/* Business Card Style Container */
+.role-card-bc {
+    background: #111111; /* Very dark slate */
+    border-radius: 8px;
     display: flex;
     flex-direction: column;
+    position: relative;
     overflow: hidden;
-    transition: transform 0.3s ease, border-color 0.3s ease;
+    height: 250px; /* Taller for text */
+    opacity: 0.95;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.8);
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease, border-color 0.4s ease;
+    cursor: pointer;
+    border: 1px solid #222;
 }
 
-.role-card:hover {
-    border-color: rgba(255, 255, 255, 0.2);
-    transform: translateY(-5px);
+.role-card-bc:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(255, 0, 51, 0.3);
+    border-color: #ff0033;
+    opacity: 1;
 }
 
-.role-image-container {
-    height: 180px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 1.5rem;
-    background: transparent;
+/* Single Unified Red Geometric Angle */
+.rc-shape {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(135deg, #cc0000 0%, #ff0033 50%, #990000 100%);
+    /* Precisely maps the crossed business card ribbons leaving top-left and bottom-right empty */
+    clip-path: polygon(
+        0 40%, 35% 40%, 50% 0, 65% 0, 48% 48%, 
+        100% 48%, 100% 58%, 52% 58%, 35% 100%, 20% 100%, 38% 50%, 0 50%
+    );
+    z-index: 1;
+    transition: transform 0.5s ease, filter 0.5s ease;
+    transform-origin: center;
 }
 
-.role-image {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain;
-    mix-blend-mode: screen; /* Blends dark background of the image with the card's dark background */
-    filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.1)); /* Slight glow */
-    border-radius: 8px; /* In case the blend mode isn't perfect */
-    transition: transform 0.4s ease;
+.role-card-bc:hover .rc-shape {
+    transform: scale(1.02); 
+    filter: brightness(1.15);
 }
 
-.role-card:hover .role-image {
-    transform: scale(1.05); /* Slight zoom on hover */
+/* Top Left Texts */
+.rc-top-left {
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    z-index: 10;
+    max-width: 75%;
 }
 
-.role-content {
-    padding: 0 1.5rem 1.5rem 1.5rem;
-    flex-grow: 1;
-    text-align: center;
-}
-
-.role-card h3 {
-    font-size: 1.15rem;
-    font-weight: 500;
-    color: #e6edf3;
-    margin-bottom: 0.8rem;
-}
-
-.role-desc {
-    font-size: 0.85rem;
-    color: #8b949e;
-    line-height: 1.5;
-    margin-bottom: 1rem;
-}
-
-.role-footer {
-    padding: 1.25rem 1.5rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
-    text-align: center;
-}
-
-.learn-more {
-    text-decoration: none;
-    color: #e6edf3;
-    font-size: 0.85rem;
-    font-weight: 600;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
-    transition: color 0.3s ease;
-}
-
-.learn-more .arrow {
-    color: #4493f8; /* A nice blue arrow commonly seen in such designs */
-    transition: transform 0.3s ease;
-    font-family: monospace; /* For a slick arrow */
-    font-size: 1.1rem;
-}
-
-.role-card:hover .learn-more {
+.rc-title {
+    font-size: 1.25rem;
+    font-weight: 800;
     color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 6px;
 }
 
-.role-card:hover .learn-more .arrow {
-    transform: translateX(4px);
+.rc-subtitle {
+    font-size: 0.75rem;
+    color: #a0a0a0;
+    margin-bottom: 12px;
+    text-transform: capitalize;
+}
+
+.rc-line {
+    height: 3px;
+    width: 50px;
+    background: #ff0022;
+    border-radius: 2px;
+}
+
+/* Icons Array placed along the diagonal stripe */
+.rc-icons-overlay {
+    position: absolute;
+    bottom: 25px;
+    /* Aligned precisely over the bottom arm of the `rc-shape` */
+    left: 28%;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    color: #ffffff;
+    font-size: 0.75rem;
+    z-index: 15;
+    transition: transform 0.3s ease;
+}
+
+.role-card-bc:hover .rc-icons-overlay {
+    transform: scale(1.1);
+}
+
+/* Creating the diagonal cascading effect to follow the arm */
+.rc-icons-overlay svg:nth-child(1) { transform: translateX(10px); }
+.rc-icons-overlay svg:nth-child(2) { transform: translateX(3px); }
+.rc-icons-overlay svg:nth-child(3) { transform: translateX(-4px); }
+.rc-icons-overlay svg:nth-child(4) { transform: translateX(-11px); }
+
+/* Bottom Right Description/Contact Text */
+.rc-bottom-right {
+    position: absolute;
+    /* Guaranteed below the 58% y-mark of the right ribbon arm */
+    bottom: 25px;
+    right: 25px;
+    text-align: left;
+    z-index: 10;
+    width: 45%;
+}
+
+.rc-desc {
+    font-size: 0.75rem;
+    color: #ffffff;
+    margin-bottom: 12px;
+    line-height: 1.4;
+    font-weight: 600;
+}
+
+.rc-contact {
+    font-size: 0.65rem;
+    color: #b0b0b0;
+    margin-bottom: 5px;
+    letter-spacing: 0.5px;
 }
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
     .roles-grid {
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        grid-template-columns: 1fr;
+    }
+    .role-card-bc {
+        height: 240px;
+    }
+    .rc-title {
+        font-size: 1.15rem;
+    }
+    .rc-bottom-right {
+        width: 50%;
     }
 }
