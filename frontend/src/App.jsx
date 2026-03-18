@@ -5,6 +5,7 @@ import Background from './components/Background';
 import Home from './pages/Home';
 import Models from './pages/Models';
 import Login from './pages/Login';
+import Resume from './pages/Resume';
 import './index.css';
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/models" element={<Models />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/resume" element={<Resume />} />
         </Routes>
       </div>
     </Router>

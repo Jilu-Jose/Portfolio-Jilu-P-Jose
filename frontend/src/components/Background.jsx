@@ -1,8 +1,26 @@
+import { useEffect, useState } from 'react';
 import './Background.css';
 
 const Background = () => {
+    const [cursorPos, setCursorPos] = useState({ x: -200, y: -200 });
+
+    useEffect(() => {
+        let animationFrameId;
+        const handleMouseMove = (e) => {
+            animationFrameId = requestAnimationFrame(() => {
+                setCursorPos({ x: e.clientX, y: e.clientY });
+            });
+        };
+        window.addEventListener('mousemove', handleMouseMove);
+        return () => {
+            window.removeEventListener('mousemove', handleMouseMove);
+            cancelAnimationFrame(animationFrameId);
+        };
+    }, []);
+
     return (
         <div className="portfolio-bg">
+            <div className="cursor-glow" style={{ left: cursorPos.x, top: cursorPos.y }}></div>
             <div className="bg-ambient-light light-red"></div>
             <div className="bg-ambient-light dark-red"></div>
             <div className="bg-ambient-light deep-grey"></div>

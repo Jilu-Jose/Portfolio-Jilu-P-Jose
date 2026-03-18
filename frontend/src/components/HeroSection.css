@@ -5,14 +5,13 @@
     align-items: center;
     justify-content: space-between;
     padding: 0 5%;
-    background: var(--hero-bg, #050505);
+    background: transparent;
     position: relative;
     overflow: hidden;
     color: var(--hero-text, #e6edf3);
 }
 
 [data-theme="light"] .hero-section-new {
-    --hero-bg: #f9f9f9;
     --hero-text: #333333;
 }
 

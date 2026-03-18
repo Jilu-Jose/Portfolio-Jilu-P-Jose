@@ -10,6 +10,22 @@
 }
 
 /* Ambient Lights */
+.cursor-glow {
+    position: fixed;
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, rgba(255, 0, 85, 0.08) 0%, transparent 60%);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: 5;
+    transition: opacity 0.3s ease;
+}
+
+[data-theme="light"] .cursor-glow {
+    background: radial-gradient(circle, rgba(255, 0, 85, 0.15) 0%, transparent 60%);
+    width: 700px; height: 700px;
+}
+
 .bg-ambient-light {
     position: absolute;
     border-radius: 50%;
@@ -26,14 +42,14 @@
 
 .light-red {
     width: 45vw; height: 45vw;
-    background: radial-gradient(circle, #ff0033 0%, transparent 70%);
+    background: radial-gradient(circle, #ff0055 0%, transparent 70%);
     top: -10%; left: -10%;
     animation-delay: 0s;
 }
 
 .dark-red {
     width: 60vw; height: 60vw;
-    background: radial-gradient(circle, #880011 0%, transparent 70%);
+    background: radial-gradient(circle, #ff0055 0%, transparent 70%);
     bottom: -20%; right: -15%;
     animation-delay: -10s;
     animation-direction: alternate-reverse;
@@ -90,7 +106,7 @@
 
 .particle {
     position: absolute;
-    background: #ff0022;
+    background: #ff0055;
     opacity: 0.2;
 }
 
@@ -111,7 +127,7 @@
 }
 .pr-5 { 
     width: 40px; height: 40px; 
-    border: 1px solid #ff0022; background: transparent; 
+    border: 1px solid #ff0055; background: transparent; 
     top: 110%; left: 75%; 
     animation: rise 20s linear infinite 8s; opacity: 0.1; transform: rotate(45deg); 
 }
