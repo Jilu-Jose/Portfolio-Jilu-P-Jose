@@ -11,7 +11,7 @@ export const projects = [
         title: 'S.E.N.T.R.A',
         description: 'Sentiment tracking and analytics system: Uses emotion detection fer2013 model to classify emotions and send alerts to HR when negative emotions are detected.',
         techStack: ['Python', 'Machine Learning', 'Classification', 'Computer Vision'],
-        image: '/images/sentra.jpg',
+        image: '/images/SENTRA_Project_image.png',
         githubLink: 'https://github.com/Jilu-Jose/S.E.N.T.R.A',
         liveLink: 'https://s-e-n-t-r-a.onrender.com/'
     },
@@ -19,7 +19,7 @@ export const projects = [
         title: 'F.A.L.C.O.N',
         description: 'Financial Anomaly & Loss Control Optimization Network: Uses transaction data inputs to classify weather the transaction is fraud or not, uses ml classification.',
         techStack: ['Python', 'Machine Learning', 'Classification', 'Data Analysis'],
-        image: '/images/falcon.jpg',
+        image: '/images/FALCON_Project_Image.png',
         githubLink: 'https://github.com/Jilu-Jose/F.A.L.C.O.N',
         liveLink: 'https://f-a-l-c-o-n.vercel.app/'
     },
