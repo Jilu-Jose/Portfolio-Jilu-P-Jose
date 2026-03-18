@@ -5,10 +5,15 @@
     align-items: center;
     justify-content: space-between;
     padding: 0 5%;
-    background: #050505; /* Solid deep dark background */
+    background: var(--hero-bg, #050505);
     position: relative;
     overflow: hidden;
-    color: #e6edf3; /* Light text for dark bg */
+    color: var(--hero-text, #e6edf3);
+}
+
+[data-theme="light"] .hero-section-new {
+    --hero-bg: #f9f9f9;
+    --hero-text: #333333;
 }
 
 /* --- Typography & Content --- */
@@ -21,7 +26,7 @@
 .greeting {
     font-size: 1.2rem;
     font-weight: 500;
-    color: #8b949e;
+    color: var(--text-secondary, #8b949e);
     margin-bottom: 0.5rem;
 }
 
@@ -31,8 +36,9 @@
     font-weight: 900;
     margin-bottom: 1.5rem;
     text-transform: uppercase;
-    color: #ffffff;
+    color: var(--text-primary, #ffffff);
 }
+[data-theme="light"] .main-heading { --text-primary: #111111; }
 
 .name-highlight {
     color: #ff0055; /* Vibrant Red */
@@ -40,11 +46,12 @@
 
 .description-new {
     font-size: 1.1rem;
-    color: #8b949e;
+    color: var(--text-secondary, #8b949e);
     line-height: 1.6;
     margin-bottom: 3rem;
     max-width: 90%;
 }
+[data-theme="light"] .description-new, [data-theme="light"] .greeting { --text-secondary: #555555; }
 
 /* Action Area layout */
 .hero-actions {
@@ -85,12 +92,17 @@
     width: 45px;
     height: 45px;
     border-radius: 50%;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    color: #e6edf3;
+    background: var(--social-bg, rgba(255, 255, 255, 0.05));
+    border: 1px solid var(--social-border, rgba(255, 255, 255, 0.1));
+    color: var(--hero-text, #e6edf3);
     font-size: 1.2rem;
     box-shadow: 0 5px 15px rgba(0,0,0,0.2);
     transition: all 0.3s ease;
+}
+
+[data-theme="light"] .social-icon-new {
+    --social-bg: rgba(0, 0, 0, 0.05);
+    --social-border: rgba(0, 0, 0, 0.1);
 }
 
 .social-icon-new:hover {

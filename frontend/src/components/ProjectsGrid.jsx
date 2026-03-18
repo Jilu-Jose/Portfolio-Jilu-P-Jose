@@ -44,27 +44,37 @@ const ProjectsGrid = () => {
 
                     <div className="projects-deck">
                         {visibleProjects.map((project, index) => (
-                            <div className="project-card glass-panel animate-fade-in" key={project._id || `${startIndex}-${index}`} style={{ animationDelay: `${index * 0.15}s` }}>
-                                <div className="img-container">
-                                    <img src={project.image} alt={project.title} />
-                                </div>
-                                <div className="project-content">
-                                    <h3>{project.title}</h3>
-                                    <p>{project.description}</p>
-                                    <div className="tech-stack">
-                                        {project.techStack?.map((tech, i) => (
-                                            <span key={i} className="tech-tag">{tech}</span>
-                                        ))}
+                            <div className="project-card-ribbon animate-fade-in" key={project._id || `${startIndex}-${index}`} style={{ animationDelay: `${index * 0.15}s` }}>
+                                {/* Decorative Ribbons */}
+                                <div className="pc-ribbon pc-tr-black"></div>
+                                <div className="pc-ribbon pc-tr-red"></div>
+                                <div className="pc-ribbon pc-tr-black-small"></div>
+                                <div className="pc-ribbon pc-bl-red"></div>
+
+                                <div className="pc-content-wrapper">
+                                    
+                                    <div className="pc-img-container">
+                                        <img src={project.image} alt={project.title} />
                                     </div>
-                                    <div className="project-links" style={{ display: 'flex', gap: '1rem', marginTop: 'auto' }}>
-                                        <a href={project.githubLink || '#'} target="_blank" rel="noopener noreferrer" className="code-link">
-                                            <FaCode /> Code
-                                        </a>
-                                        {project.liveLink && (
-                                            <a href={project.liveLink} target="_blank" rel="noopener noreferrer" className="code-link">
-                                                <FaExternalLinkAlt /> Live
+                                    
+                                    <div className="pc-info">
+                                        <h3 className="pc-title">{project.title}</h3>
+                                        <p className="pc-desc">{project.description}</p>
+                                        <div className="pc-tech-stack">
+                                            {project.techStack?.map((tech, i) => (
+                                                <span key={i} className="pc-tech-tag">{tech}</span>
+                                            ))}
+                                        </div>
+                                        <div className="pc-links">
+                                            <a href={project.githubLink || '#'} target="_blank" rel="noopener noreferrer" className="pc-link">
+                                                <FaCode /> Code
                                             </a>
-                                        )}
+                                            {project.liveLink && (
+                                                <a href={project.liveLink} target="_blank" rel="noopener noreferrer" className="pc-link">
+                                                    <FaExternalLinkAlt /> Live
+                                                </a>
+                                            )}
+                                        </div>
                                     </div>
                                 </div>
                             </div>

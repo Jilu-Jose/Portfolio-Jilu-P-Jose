@@ -3,7 +3,11 @@
     position: relative;
     z-index: 2;
     overflow: hidden;
-    background: #050505;
+    background: var(--section-bg, #050505);
+}
+
+[data-theme="light"] .roles-section {
+    --section-bg: #f5f5f5;
 }
 
 .roles-section .section-title {

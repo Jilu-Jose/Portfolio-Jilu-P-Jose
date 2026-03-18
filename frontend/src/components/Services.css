@@ -15,20 +15,25 @@
 }
 
 .service-card-wavy {
-    background: #232427; /* Dark grayish black to match the reference */
+    background: var(--wavy-card-bg, #232427); /* Dark grayish black to match the reference */
     border-radius: 8px;
     height: 320px;
     position: relative;
     overflow: hidden;
     box-shadow: 0 10px 25px rgba(0,0,0,0.5);
-    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease, background 0.4s ease;
     cursor: pointer;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
     padding-top: 45px;
-    border: 1px solid #333;
+    border: 1px solid var(--wavy-border, #333);
+}
+
+[data-theme="light"] .service-card-wavy {
+    --wavy-card-bg: #f5f7fa; /* Light enough, but darker than pure white to contrast with the wave */
+    --wavy-border: #e0e0e0;
 }
 
 .service-card-wavy:hover {
@@ -88,8 +93,12 @@
     margin-bottom: 20px;
 }
 
-.sc-title .t-white { color: #ffffff; }
+.sc-title .t-white { color: var(--wavy-text-main, #ffffff); transition: color 0.3s ease; }
 .sc-title .t-red { color: #cc0022; transition: color 0.3s ease; }
+
+[data-theme="light"] .sc-title {
+    --wavy-text-main: #111111;
+}
 
 .service-card-wavy:hover .t-red {
     color: #ff0033;
@@ -99,11 +108,16 @@
 /* Description text safely sitting above the big red wave */
 .sc-desc {
     font-size: 0.82rem;
-    color: #b0b0b0;
+    color: var(--wavy-text-sec, #b0b0b0);
     text-align: center;
     line-height: 1.6;
     font-weight: 500;
     max-width: 95%;
+    transition: color 0.3s ease;
+}
+
+[data-theme="light"] .sc-desc {
+    --wavy-text-sec: #555555;
 }
 
 @media (max-width: 768px) {
