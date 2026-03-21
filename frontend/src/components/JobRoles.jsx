@@ -21,7 +21,7 @@ const JobRoles = () => {
                     const restWords = titleParts.slice(1).join(' ');
 
                     return (
-                        <div className="role-card-lightdark animate-fade-in" key={index} style={{ animationDelay: `${index * 0.1}s` }}>
+                        <div className="role-card-lightdark" key={index} style={{ animationDelay: `${index * 0.4}s` }}>
                             <div className="rc-red-layer"></div>
                             
                             <div className="rc-white-layer">

@@ -66,3 +66,16 @@
     transform: rotate(45deg);
     color: var(--accent-orange);
 }
+
+/* Light Mode Overrides */
+[data-theme="light"] .navbar {
+    background: rgba(255, 255, 255, 0.85);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+[data-theme="light"] .logo {
+    background: linear-gradient(90deg, #1e293b, #64748b);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}

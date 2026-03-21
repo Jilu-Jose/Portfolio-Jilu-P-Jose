@@ -4,8 +4,8 @@ import Navbar from './components/Navbar';
 import Background from './components/Background';
 import Home from './pages/Home';
 import Models from './pages/Models';
-import Login from './pages/Login';
 import Resume from './pages/Resume';
+import PRD from './pages/PRD';
 import './index.css';
 
 function App() {
@@ -27,8 +27,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/models" element={<Models />} />
-          <Route path="/login" element={<Login />} />
           <Route path="/resume" element={<Resume />} />
+          <Route path="/prd" element={<PRD />} />
         </Routes>
       </div>
     </Router>

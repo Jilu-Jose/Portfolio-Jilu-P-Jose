@@ -7,9 +7,9 @@ const Navbar = ({ theme, toggleTheme }) => {
         <nav className="navbar glass-panel">
             <div className="logo">J.I.L.U</div>
             <div className="nav-links">
-                <Link to="/login" className="nav-item">Login</Link>
                 <Link to="/" className="nav-item">Home</Link>
                 <Link to="/resume" className="nav-item">Resume</Link>
+                <Link to="/prd" className="nav-item">PRDs</Link>
                 <a href="/#projects" className="nav-item">Projects</a>
                 <a href="/#about" className="nav-item">About</a>
                 <a href="/#contact" className="nav-item">Contact</a>

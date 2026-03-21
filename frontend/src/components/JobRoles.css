@@ -19,6 +19,7 @@
     gap: 2.5rem;
     max-width: 1200px;
     margin: 0 auto;
+    perspective: 1200px;
 }
 
 /* Container */
@@ -29,13 +30,26 @@
     height: 250px;
     overflow: hidden;
     box-shadow: 0 10px 25px rgba(0,0,0,0.6);
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
     cursor: pointer;
+    transform-style: preserve-3d;
+    animation: floatCard 4s ease-in-out infinite;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+@keyframes floatCard {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-12px);
+    }
 }
 
 .role-card-lightdark:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 35px rgba(255, 122, 0, 0.3);
+    animation-play-state: paused;
+    transform: perspective(1000px) translateY(-10px) rotateX(10deg) rotateY(-5deg) !important;
+    box-shadow: -10px 15px 35px rgba(255, 122, 0, 0.3), 10px 15px 35px rgba(255, 122, 0, 0.2);
+    z-index: 10;
 }
 
 .rc-red-layer {
