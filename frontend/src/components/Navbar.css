@@ -45,7 +45,7 @@
     height: 2px;
     bottom: -4px;
     left: 0;
-    background-color: var(--accent-red);
+    background-color: var(--accent-orange);
     transition: width 0.3s ease;
 }
 
@@ -64,5 +64,5 @@
 
 #theme-toggle:hover {
     transform: rotate(45deg);
-    color: var(--accent-red);
+    color: var(--accent-orange);
 }
