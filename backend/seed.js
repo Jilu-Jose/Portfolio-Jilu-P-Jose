@@ -33,6 +33,30 @@ const projects = [
         liveLink: 'https://f-a-l-c-o-n.vercel.app/'
     },
     {
+        title: 'O.R.B.I.T',
+        description: 'A production-grade full-stack Employee Leave Management System simulating real-world HR workflows with scalable enterprise architecture.',
+        techStack: ['React', 'Node.js', 'MongoDB', 'Enterprise'],
+        image: '/images/FALCON_Project_Image.png',
+        githubLink: 'https://github.com/Jilu-Jose/O.R.B.I.T-System',
+        liveLink: 'https://o-r-b-i-t-system.vercel.app'
+    },
+    {
+        title: 'Z.E.N.T.R.A.Q',
+        description: 'A modern frontend fintech dashboard securely managing income and expenses with an intuitive React & Firebase interface.',
+        techStack: ['React', 'Firebase', 'Fintech'],
+        image: '/images/Stock_port.png',
+        githubLink: 'https://github.com/Jilu-Jose/ZENTRAQ',
+        liveLink: 'https://zentraq-ten.vercel.app/'
+    },
+    {
+        title: 'A.C.E',
+        description: 'A web-based Academic Control Engine for robust student productivity, task management, and visual analytics using Chart.js & LocalStorage.',
+        techStack: ['HTML', 'JavaScript', 'Chart.js'],
+        image: '/images/resumenlp.jpg',
+        githubLink: 'https://github.com/Jilu-Jose/A.C.E',
+        liveLink: 'https://a-c-e.vercel.app/'
+    },
+    {
         title: 'M.A.G.I.C Telescope',
         description: 'Classification of Gamma and Hadronic Events via Cherenkov Telescope.',
         techStack: ['Python', 'Machine Learning', 'Statistics', 'SQL'],
@@ -67,12 +91,6 @@ const projects = [
         description: 'A regression based model that predicts annual yield based on environmental factors.',
         techStack: ['Flask', 'Scikit-learn', 'Pandas', 'NumPy', 'Matplotlib', 'Seaborn'],
         image: '/images/AGRISOL.png'
-    },
-    {
-        title: 'Twitter Sentiment Analysis',
-        description: 'Deep learning model for analyzing sentiment in Twitter posts using BERT.',
-        techStack: ['NLP', 'PyTorch', 'BERT', 'Docker'],
-        image: '/images/twitter_port.png'
     },
     {
         title: 'Rainfall Prediction',
