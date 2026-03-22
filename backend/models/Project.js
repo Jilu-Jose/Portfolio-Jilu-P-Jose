@@ -4,7 +4,9 @@ const projectSchema = new mongoose.Schema({
     title: { type: String, required: true },
     description: { type: String, required: true },
     techStack: [{ type: String }],
-    image: { type: String }
+    image: { type: String },
+    githubLink: { type: String },
+    liveLink: { type: String }
 });
 
 export default mongoose.model('Project', projectSchema);
