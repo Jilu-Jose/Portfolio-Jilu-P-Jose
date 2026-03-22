@@ -3,7 +3,7 @@ export const projects = [
         title: 'W.I.K.T.O.R',
         description: 'Retrieval Augmented Generation (RAG) model fetching Wikipedia data using LangChain & Gemini.',
         techStack: ['LangChain', 'API', 'GenAI'],
-        image: '/images/RAG.png',
+        image: '/images/WIKTOR_Project_image.png',
         githubLink: 'https://github.com/Jilu-Jose/W.I.K.T.O.R-Chatbot'
     },
     {
