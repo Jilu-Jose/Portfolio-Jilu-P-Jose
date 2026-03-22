@@ -51,14 +51,17 @@ const AboutMe = () => {
                     <div className="text-block glass-panel">
                         <h3>Who I Am</h3>
                         <p>
-                            I am an <strong>AI Lead</strong> and <strong>Data Scientist</strong> at Tezzera, specializing in building intelligent, scalable, and data-driven solutions. With a BTech in Computer Science and Data Science from Lovely Professional University, I have developed a strong foundation in machine learning, deep learning, and advanced statistical analysis.
+                            I am a results-driven Data Scientist and Machine Learning Engineer with a strong foundation in statistical analysis, algorithm design, and scalable system development. I specialize in transforming complex, high-dimensional data into actionable insights and intelligent solutions that drive business value. My expertise spans data preprocessing, feature engineering, predictive modeling, and deploying end-to-end machine learning pipelines in production environments.
                         </p>
                     </div>
                     
                     <div className="text-block glass-panel" style={{animationDelay: "0.2s"}}>
                         <h3>What Drives Me</h3>
                         <p>
-                            My experience spans leading AI initiatives, developing predictive modeling pipelines, and scaling enterprise data infrastructure. I am passionate about transforming raw data into actionable insights and creating impactful technology to solve complex business problems.
+                            I am a results-driven Data Scientist and Machine Learning Engineer with a strong foundation in statistical analysis, algorithm design, and scalable system development. I specialize in transforming complex, high-dimensional data into actionable insights and intelligent solutions that drive business value. My expertise spans data preprocessing, feature engineering, predictive modeling, and deploying end-to-end machine learning pipelines in production environments.
+                        </p>
+                        <p style={{ marginTop: '10px' }}>
+                            I am continuously exploring advancements in artificial intelligence, deep learning, and MLOps to build scalable, secure, and impactful systems.
                         </p>
                     </div>
                 </div>

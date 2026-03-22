@@ -113,7 +113,7 @@
     position: relative;
     background: var(--card-bg, #ffffff);
     border-radius: 8px;
-    height: 420px; /* Tall enough for image + content */
+    height: 460px; /* Height increased for larger image */
     display: flex;
     flex-direction: column;
     overflow: hidden;
@@ -198,7 +198,7 @@
 /* Image */
 .pc-img-container {
     width: 100%;
-    height: 160px; /* Reduced to fit content */
+    height: 200px; /* Increased height to view properly */
     border-radius: 4px;
     overflow: hidden;
     margin-top: 35px; /* Push down to clear top ribbons */
