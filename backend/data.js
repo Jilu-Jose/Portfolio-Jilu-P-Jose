@@ -136,3 +136,50 @@ export const models = [
         link: 'https://github.com/username/credit-default-classifier'
     }
 ];
+
+export const extracurriculars = [
+    {
+        title: 'Amazon ML Hackathon',
+        type: 'Hackathon',
+        description: 'Participated in Amazon\'s Machine Learning Hackathon, building and optimizing ML models under competitive constraints.',
+        date: 'Aug 5, 2025',
+        link: ''
+    },
+    {
+        title: 'Concoction - CTF Hackathon',
+        type: 'Hackathon',
+        description: 'Competed in a Capture The Flag cybersecurity hackathon, solving challenges across cryptography, forensics, and exploitation.',
+        date: 'April 20, 2024',
+        award: 'Rank 19th',
+        link: ''
+    },
+    {
+        title: 'Blockchain Hackathon',
+        type: 'Hackathon',
+        description: 'Built decentralized application prototypes leveraging blockchain technology in a competitive hackathon setting.',
+        date: 'April 15, 2025',
+        link: ''
+    },
+    {
+        title: 'EduRev - AI Model Showcase',
+        type: 'Competition',
+        description: 'Showcased AI/ML models in a competitive exhibition, demonstrating innovative approaches to real-world problems.',
+        date: 'Oct 18, 2025',
+        award: 'Rank 5th',
+        link: ''
+    },
+    {
+        title: 'Kaggle - Agentic AI Workshop',
+        type: 'Workshop',
+        description: 'Attended a hands-on workshop exploring agentic AI paradigms, autonomous agents, and multi-agent systems on Kaggle.',
+        date: 'Nov 20, 2025',
+        link: ''
+    },
+    {
+        title: 'Cyber-Symposium Workshop',
+        type: 'Workshop',
+        description: 'Participated in cybersecurity symposium covering threat analysis, penetration testing, and modern defense strategies.',
+        date: 'May 16, 2024',
+        link: ''
+    }
+];

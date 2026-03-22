@@ -1,0 +1,311 @@
+.extracurriculars-section {
+    padding: 5rem 10%;
+    background: transparent;
+}
+
+.extra-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(420px, 1fr));
+    gap: 3rem;
+    margin-top: 3rem;
+    justify-items: center;
+}
+
+/* ===== Business Card Container ===== */
+.extra-biz-card {
+    position: relative;
+    width: 100%;
+    max-width: 480px;
+    height: 240px;
+    background: #ffffff;
+    border-radius: 6px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    display: flex;
+    overflow: hidden;
+    cursor: default;
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.extra-biz-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(255, 122, 0, 0.4);
+}
+
+/* ===== LEFT SECTION (White) ===== */
+.extra-biz-left {
+    width: 38%;
+    padding: 22px 18px 72px 22px;
+    display: flex;
+    flex-direction: column;
+    z-index: 2;
+    position: relative;
+}
+
+.extra-biz-type-label {
+    font-size: 0.6rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    color: #888;
+    margin-top: 2px;
+}
+
+.extra-biz-title {
+    font-size: 1rem;
+    font-weight: 900;
+    color: #1a1a1a;
+    line-height: 1.2;
+    margin-bottom: 0;
+}
+
+.extra-biz-title .accent {
+    color: #f38d1d;
+}
+
+/* Detail rows on the left */
+.extra-biz-info {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: auto;
+}
+
+.extra-biz-info-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.extra-biz-info-icon {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.65rem;
+    color: white;
+    flex-shrink: 0;
+}
+
+.icon-orange {
+    background: #f38d1d;
+}
+
+.icon-dark {
+    background: #2b2b2b;
+}
+
+.extra-biz-info-text {
+    font-size: 0.72rem;
+    color: #555;
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+/* ===== CHEVRON / RIBBON GROUP ===== */
+.extra-biz-ribbon-group {
+    position: absolute;
+    top: 22px;
+    right: 0;
+    width: 62%;
+    height: 46px;
+    display: flex;
+    z-index: 3;
+    overflow: hidden;
+}
+
+.extra-biz-slash-1 {
+    width: 14px;
+    min-width: 14px;
+    height: 100%;
+    background: #f38d1d;
+    transform: skewX(-28deg);
+    margin-right: 5px;
+    margin-left: 8px;
+}
+
+.extra-biz-slash-2 {
+    width: 22px;
+    min-width: 22px;
+    height: 100%;
+    background: #2b2b2b;
+    transform: skewX(-28deg);
+    margin-right: -8px;
+    z-index: 1;
+}
+
+.extra-biz-ribbon-main {
+    flex: 1;
+    background: #f38d1d;
+    transform: skewX(-28deg);
+    margin-right: -20px;
+    padding-left: 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.extra-biz-ribbon-text {
+    transform: skewX(28deg);
+    color: white;
+    margin-left: 8px;
+    white-space: nowrap;
+}
+
+.extra-biz-ribbon-text h3 {
+    margin: 0;
+    font-size: 0.95rem;
+    font-weight: 800;
+    letter-spacing: 0.3px;
+}
+
+.extra-biz-ribbon-text p {
+    margin: 0;
+    font-size: 0.5rem;
+    font-weight: 500;
+    opacity: 0.9;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    max-width: 170px;
+}
+
+/* ===== RIGHT CONTENT (description area on white bg) ===== */
+.extra-biz-right-content {
+    position: absolute;
+    top: 82px;
+    left: 42%;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 50%;
+}
+
+.extra-biz-description {
+    font-size: 0.62rem;
+    color: #666;
+    line-height: 1.55;
+    font-weight: 500;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* ===== AWARD BADGE (inside right content) ===== */
+.extra-biz-award {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 3px 12px;
+    background: linear-gradient(135deg, #fff5e0, #ffeacc);
+    border: 1.5px solid #f38d1d;
+    border-radius: 4px;
+    font-size: 0.6rem;
+    font-weight: 800;
+    color: #d47600;
+    align-self: flex-start;
+}
+
+.extra-biz-award .award-icon {
+    font-size: 0.65rem;
+    color: #f38d1d;
+}
+
+/* ===== BOTTOM SHAPES ===== */
+.extra-biz-bottom-orange {
+    position: absolute;
+    bottom: 22px;
+    left: 0;
+    width: 46%;
+    height: 32px;
+    background: #f38d1d;
+    clip-path: polygon(0 0, 85% 0, 100% 100%, 0 100%);
+    z-index: 3;
+}
+
+.extra-biz-type-icon-box {
+    position: absolute;
+    bottom: 14px;
+    left: 14px;
+    width: 44px;
+    height: 44px;
+    background: white;
+    border: 3px solid #f38d1d;
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    color: #f38d1d;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.extra-biz-bottom-dark {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 65%;
+    height: 55px;
+    background: #2b2b2b;
+    clip-path: polygon(15% 0, 100% 0, 100% 100%, 0% 100%);
+    z-index: 6;
+    display: flex;
+    align-items: center;
+    padding-left: 22%;
+    color: white;
+}
+
+.extra-biz-footer-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: white;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.extra-biz-footer-label .footer-dot {
+    width: 18px;
+    height: 18px;
+    background: #f38d1d;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.55rem;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    .extra-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .extracurriculars-section {
+        padding: 4rem 5%;
+    }
+
+    .extra-biz-card {
+        max-width: 100%;
+        height: auto;
+        min-height: 240px;
+    }
+}
+
+@media (max-width: 480px) {
+    .extra-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .extra-biz-card {
+        height: auto;
+        min-height: 220px;
+    }
+}

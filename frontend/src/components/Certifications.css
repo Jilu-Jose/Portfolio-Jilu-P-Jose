@@ -13,7 +13,8 @@
 /* --- Business Card Design --- */
 .cert-card-biz {
     position: relative;
-    background: #f4f4f4; /* Light gray base */
+    background: #f4f4f4;
+    /* Light gray base */
     border-radius: 12px;
     height: 220px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
@@ -31,9 +32,11 @@
 /* Layered Curves at the Bottom Right */
 .biz-shape-orange {
     position: absolute;
-    bottom: 0; right: 0;
+    bottom: 0;
+    right: 0;
     width: 65%;
-    height: 120px; /* Much taller to encompass text */
+    height: 120px;
+    /* Much taller to encompass text */
     background: linear-gradient(135deg, #ffb800, #ff5722);
     border-radius: 80px 0 0 0;
     z-index: 2;
@@ -42,21 +45,26 @@
 
 .biz-shape-gray {
     position: absolute;
-    bottom: 0; right: 0;
+    bottom: 0;
+    right: 0;
     width: 72%;
-    height: 140px; /* Taller shadow buffer */
+    height: 140px;
+    /* Taller shadow buffer */
     background: #dcdcdc;
     border-radius: 100px 0 0 0;
     z-index: 1;
-    box-shadow: inset 0 10px 10px rgba(0,0,0,0.05);
+    box-shadow: inset 0 10px 10px rgba(0, 0, 0, 0.05);
 }
 
 /* Bottom silver strip across the card edge before the curve */
 .cert-card-biz::before {
     content: '';
     position: absolute;
-    bottom: 0; left: 0;
-    width: 40%; height: 12px; /* Limited width so it doesn't poke out early */
+    bottom: 0;
+    left: 0;
+    width: 40%;
+    height: 12px;
+    /* Limited width so it doesn't poke out early */
     background: linear-gradient(90deg, #dcdcdc 80%, transparent 100%);
     z-index: 1;
 }
@@ -108,19 +116,36 @@
     display: flex;
     align-items: center;
 }
-.bz-line-yellow, .bz-line-orange, .bz-line-dark {
+
+.bz-line-yellow,
+.bz-line-orange,
+.bz-line-dark {
     height: 3px;
     border-radius: 2px;
 }
-.bz-line-yellow { width: 15px; background: #ffb800; }
-.bz-line-orange { width: 40px; background: #ff5722; margin: 0 5px; }
-.bz-line-dark { width: 10px; background: #333333; }
+
+.bz-line-yellow {
+    width: 15px;
+    background: #ffb800;
+}
+
+.bz-line-orange {
+    width: 40px;
+    background: #ff5722;
+    margin: 0 5px;
+}
+
+.bz-line-dark {
+    width: 10px;
+    background: #333333;
+}
 
 /* Contact / Details List */
 .biz-details {
     position: absolute;
     bottom: 25px;
-    left: 42%; /* Positioned centrally, overlapping the curve */
+    left: 42%;
+    /* Positioned centrally, overlapping the curve */
     list-style: none;
     padding: 0;
     margin: 0;
@@ -134,14 +159,24 @@
     align-items: center;
     gap: 12px;
     font-size: 0.75rem;
-    color: #222222; /* Dark text clearly visible on orange and grey */
+    color: #222222;
+    /* Dark text clearly visible on orange and grey */
     font-weight: 700;
-    text-shadow: 0 1px 2px rgba(255,255,255,0.2); /* Slight lift */
+    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.2);
+    /* Slight lift */
 }
 
 /* Specific item colors to match the user's mockup closely */
-.biz-details li:nth-child(2) { color: #1a4b6b; } /* Deep bluish tint for Credential ID */
-.biz-details li:nth-child(3) { color: #3b82f6; } /* Highlight Link text */
+.biz-details li:nth-child(2) {
+    color: #1a4b6b;
+}
+
+/* Deep bluish tint for Credential ID */
+.biz-details li:nth-child(3) {
+    color: #3b82f6;
+}
+
+/* Highlight Link text */
 
 .biz-icon {
     font-size: 0.95rem;
@@ -151,7 +186,8 @@
 }
 
 .biz-link {
-    color: #1a4b6b; /* Sleek color for the active link */
+    color: #1a4b6b;
+    /* Sleek color for the active link */
     text-decoration: underline;
     font-style: italic;
     transition: color 0.3s;
@@ -171,14 +207,17 @@
     position: absolute;
     top: 25px;
     right: 20px;
-    width: 140px; /* Much larger certificate image */
+    width: 140px;
+    /* Much larger certificate image */
     height: 90px;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: rgba(255, 255, 255, 0.5); /* Soft backing for transparent certs */
-    border-radius: 4px; /* Rectangular bounds */
-    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    background: rgba(255, 255, 255, 0.5);
+    /* Soft backing for transparent certs */
+    border-radius: 4px;
+    /* Rectangular bounds */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
     border: 1px solid #e0e0e0;
     padding: 2px;
 }
@@ -186,7 +225,8 @@
 .biz-image-container img {
     max-width: 100%;
     max-height: 100%;
-    object-fit: contain; /* Preserves entire certificate bounds safely */
+    object-fit: contain;
+    /* Preserves entire certificate bounds safely */
 }
 
 /* Provider text floating on the orange shape */
@@ -196,7 +236,8 @@
     right: 25px;
     font-size: 1rem;
     font-weight: 900;
-    color: #111111; /* Extremely bold, dark text embedded inside orange */
+    color: #111111;
+    /* Extremely bold, dark text embedded inside orange */
     text-transform: uppercase;
     letter-spacing: 2px;
 }

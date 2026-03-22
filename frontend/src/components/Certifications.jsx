@@ -35,19 +35,19 @@ const Certifications = () => {
                                         <span className="bold-text">{mainTitle}</span> {subTitle && <span className="light-text">{subTitle}</span>}
                                     </h3>
                                     <p className="biz-provider">{cert.provider}</p>
-                                    
+
                                     <div className="biz-separator">
                                         <div className="bz-line-yellow"></div>
                                         <div className="bz-line-orange"></div>
                                         <div className="bz-line-dark"></div>
                                     </div>
                                 </div>
-                                
+
                                 <ul className="biz-details">
-                                    <li><FaCalendarAlt className="biz-icon"/> {cert.date}</li>
-                                    <li><FaIdBadge className="biz-icon"/> {cert.credentialId}</li>
+                                    <li><FaCalendarAlt className="biz-icon" /> {cert.date}</li>
+                                    <li><FaIdBadge className="biz-icon" /> {cert.credentialId}</li>
                                     <li>
-                                        <FaExternalLinkAlt className="biz-icon"/> 
+                                        <FaExternalLinkAlt className="biz-icon" />
                                         {cert.certificateLink !== '#' ? (
                                             <a href={cert.certificateLink} target="_blank" rel="noopener noreferrer" className="biz-link">View Certificate</a>
                                         ) : (
@@ -55,11 +55,11 @@ const Certifications = () => {
                                         )}
                                     </li>
                                 </ul>
-                                
+
                                 <div className="biz-image-container">
                                     <img src={cert.image} alt={cert.provider} />
                                 </div>
-                                
+
                                 <p className="biz-logo-text">{cert.provider.split(' ')[0]}</p>
                             </div>
                         </div>
