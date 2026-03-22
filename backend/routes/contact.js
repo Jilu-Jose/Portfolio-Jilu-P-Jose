@@ -23,13 +23,18 @@ router.post('/', async (req, res) => {
             }
         }
 
-        // Send Email Notification
+        // Send Email Notification (in background to prevent hanging the frontend)
         if (process.env.EMAIL_USER && process.env.EMAIL_PASS) {
             const transporter = nodemailer.createTransport({
-                service: 'gmail',
+                host: 'smtp.gmail.com',
+                port: 465,
+                secure: true, // Use SSL/TLS
                 auth: {
                     user: process.env.EMAIL_USER,
                     pass: process.env.EMAIL_PASS
+                },
+                tls: {
+                    rejectUnauthorized: false // Helps avoid some strict server certificate issues
                 }
             });
 
@@ -48,11 +53,15 @@ router.post('/', async (req, res) => {
                        </div>`
             };
 
-            await transporter.sendMail(mailOptions);
+            // Do not 'await' this! Let it process asynchronously so the user isn't stuck waiting for SMTP to connect.
+            transporter.sendMail(mailOptions).catch(err => {
+                console.error("Nodemailer failed to send email in background:", err);
+            });
         } else {
             console.warn("EMAIL_USER or EMAIL_PASS not set in .env. Email dispatch skipped.");
         }
 
+        // Instantly return success to the user!
         res.status(201).json({ success: true, message: 'Message sent successfully!' });
     } catch (error) {
         console.error('Contact route error:', error);
