@@ -1,14 +1,14 @@
 export const projects = [
     {
         title: 'W.I.K.T.O.R',
-        description: 'A RAG (Retrieval Augmented Generation) model that retrieves information from Wikipedia ,built using langchain and Gemini.',
+        description: 'Retrieval Augmented Generation (RAG) model fetching Wikipedia data using LangChain & Gemini.',
         techStack: ['LangChain', 'API', 'GenAI'],
         image: '/images/RAG.png',
         githubLink: 'https://github.com/Jilu-Jose/W.I.K.T.O.R-Chatbot'
     },
     {
         title: 'N.O.V.A System',
-        description: 'Satellite health monitoring & early warning, threat mitigation system.',
+        description: 'Real-time satellite health monitoring system with early warning and threat mitigation capabilities.',
         techStack: ['Python', 'Machine Learning', 'API', 'Real-time'],
         image: '/images/iss-portfolio.jpg',
         githubLink: 'https://github.com/Jilu-Jose/N.O.V.A-System',
@@ -16,7 +16,7 @@ export const projects = [
     },
     {
         title: 'S.E.N.T.R.A',
-        description: 'Sentiment tracking and analytics system: Uses emotion detection fer2013 model to classify emotions and send alerts to HR when negative emotions are detected.',
+        description: 'Emotion detection system utilizing FER2013 to classify workplace sentiment and send HR alerts.',
         techStack: ['Python', 'Machine Learning', 'Classification', 'Computer Vision'],
         image: '/images/SENTRA_Project_image.png',
         githubLink: 'https://github.com/Jilu-Jose/S.E.N.T.R.A',
@@ -24,7 +24,7 @@ export const projects = [
     },
     {
         title: 'F.A.L.C.O.N',
-        description: 'Financial Anomaly & Loss Control Optimization Network: Uses transaction data inputs to classify weather the transaction is fraud or not, uses ml classification.',
+        description: 'Machine learning financial network utilizing transaction data for real-time fraud classification.',
         techStack: ['Python', 'Machine Learning', 'Classification', 'Data Analysis'],
         image: '/images/FALCON_Project_Image.png',
         githubLink: 'https://github.com/Jilu-Jose/F.A.L.C.O.N',
@@ -32,7 +32,7 @@ export const projects = [
     },
     {
         title: 'O.R.B.I.T',
-        description: 'A production-grade full-stack Employee Leave Management System simulating real-world HR workflows with scalable enterprise architecture.',
+        description: 'Enterprise-grade complete Employee Leave Management System replicating real-world HR workflows.',
         techStack: ['React', 'Node.js', 'MongoDB', 'Enterprise'],
         image: '/images/ORBIT_Project_image.png',
         githubLink: 'https://github.com/Jilu-Jose/O.R.B.I.T-System',
@@ -40,7 +40,7 @@ export const projects = [
     },
     {
         title: 'Z.E.N.T.R.A.Q',
-        description: 'A modern frontend fintech dashboard securely managing income and expenses with an intuitive React & Firebase interface.',
+        description: 'Modern fintech frontend dashboard for tracking income and expenses using React and Firebase.',
         techStack: ['React', 'Firebase', 'Fintech'],
         image: '/images/ZENTRAQ_Project_images.png',
         githubLink: 'https://github.com/Jilu-Jose/ZENTRAQ',
@@ -48,7 +48,7 @@ export const projects = [
     },
     {
         title: 'A.C.E',
-        description: 'A web-based Academic Control Engine for robust student productivity, task management, and visual analytics using Chart.js & LocalStorage.',
+        description: 'Academic Control Engine web app for student productivity, task tracking, and visual analytics.',
         techStack: ['HTML', 'JavaScript', 'Chart.js'],
         image: '/images/ACE_Project_image.png',
         githubLink: 'https://github.com/Jilu-Jose/A.C.E',
@@ -56,7 +56,7 @@ export const projects = [
     },
     {
         title: 'M.A.G.I.C Telescope',
-        description: 'Classification of Gamma and Hadronic Events via Cherenkov Telescope.',
+        description: 'Machine learning classification of Gamma and Hadronic event data via Cherenkov Telescope metrics.',
         techStack: ['Python', 'Machine Learning', 'Statistics', 'SQL'],
         image: '/images/Magic_port.png',
         githubLink: 'https://github.com/Jilu-Jose/M.A.G.I.C-Telescope',
@@ -64,20 +64,20 @@ export const projects = [
     },
     {
         title: 'Meteorite Landings',
-        description: 'Conducted an in-depth research on meteorite landings from data provided by NASA & performed EDA.',
+        description: 'In-depth exploratory data analysis and statistical breakdown of NASA meteorite landing records.',
         techStack: ['Python', 'EDA', 'Statistics', 'SQL'],
         image: '/images/meteorite.png',
         githubLink: 'https://github.com/Jilu-Jose/INT-375-Analysis-of-Meteorite-Landings-by-NASA'
     },
     {
         title: 'Stock Price Prediction',
-        description: 'LSTM-based deep learning model for stock price prediction using historical data.',
+        description: 'Deep learning time-series model utilizing LSTM networks to predict historical stock price trends.',
         techStack: ['Deep Learning', 'Time Series', 'Finance'],
         image: '/images/Stock_port.png'
     },
     {
         title: 'ResumeIt',
-        description: 'A NLP (Natural Language Processing) based job classification model, uses regular expressions for cleaning and preprocessing of Resume',
+        description: 'NLP-powered job classification model using regex for robust cleaning and preprocessing of resumes.',
         techStack: ['Scikit-Learn', 'NLP', 'Vector-Data'],
         image: '/images/resumenlp.jpg',
         githubLink: 'https://github.com/Jilu-Jose/Resume-Classifier-ATS-APP',
@@ -85,21 +85,21 @@ export const projects = [
     },
     {
         title: 'A.G.R.I.S.O.L',
-        description: 'A regression based model that predicts annual yield based on environmental factors.',
+        description: 'Regression-based prediction model estimating annual agricultural yield from environmental factors.',
         techStack: ['Flask', 'Scikit-learn', 'Pandas', 'NumPy', 'Matplotlib', 'Seaborn'],
         image: '/images/AGRISOL.png',
         githubLink: 'https://github.com/Jilu-Jose/A.G.R.I.S.O.L'
     },
     {
         title: 'Rainfall Prediction',
-        description: 'Used ML algorithms to train a model to predict rainfall.',
+        description: 'Machine learning classification algorithm trained on historical climate data to predict rainfall.',
         techStack: ['Machine Learning', 'Climate', 'SQL'],
         image: '/images/Rain_port.png',
         githubLink: 'https://github.com/Jilu-Jose/ML-103-Rain-Prediction-'
     },
     {
         title: 'Iris Flower Classification',
-        description: 'Used Logistic regression to classify iris flower species using sepal and petal length and width.',
+        description: 'Logistic regression model classifying iris flower species based on sepal and petal measurements.',
         techStack: ['Python', 'Scikit-learn', 'Pandas', 'NumPy'],
         image: '/images/iris_port.png',
         githubLink: 'https://github.com/Jilu-Jose/ML-102-IRIS-Dataset-'
