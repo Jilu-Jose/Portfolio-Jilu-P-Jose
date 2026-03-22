@@ -28,7 +28,7 @@ const Certifications = () => {
                             <div className="biz-shape-orange"></div>
 
                             <div className="biz-content">
-                                <div className="biz-left">
+                                <div className="biz-text-block">
                                     <h3 className="biz-title">
                                         <span className="bold-text">{mainTitle}</span> {subTitle && <span className="light-text">{subTitle}</span>}
                                     </h3>
@@ -39,27 +39,26 @@ const Certifications = () => {
                                         <div className="bz-line-orange"></div>
                                         <div className="bz-line-dark"></div>
                                     </div>
-                                    
-                                    <ul className="biz-details">
-                                        <li><FaCalendarAlt className="biz-icon"/> {cert.date}</li>
-                                        <li><FaIdBadge className="biz-icon"/> {cert.credentialId}</li>
-                                        <li>
-                                            <FaExternalLinkAlt className="biz-icon"/> 
-                                            {cert.certificateLink !== '#' ? (
-                                                <a href={cert.certificateLink} target="_blank" rel="noopener noreferrer" className="biz-link">View Certificate</a>
-                                            ) : (
-                                                <span className="biz-link-pending">Link to be added</span>
-                                            )}
-                                        </li>
-                                    </ul>
                                 </div>
                                 
-                                <div className="biz-right">
-                                    <div className="biz-logo-container">
-                                        <img src={cert.image} alt={cert.provider} />
-                                    </div>
-                                    <p className="biz-logo-text">{cert.provider.split(' ')[0]}</p>
+                                <ul className="biz-details">
+                                    <li><FaCalendarAlt className="biz-icon"/> {cert.date}</li>
+                                    <li><FaIdBadge className="biz-icon"/> {cert.credentialId}</li>
+                                    <li>
+                                        <FaExternalLinkAlt className="biz-icon"/> 
+                                        {cert.certificateLink !== '#' ? (
+                                            <a href={cert.certificateLink} target="_blank" rel="noopener noreferrer" className="biz-link">View Certificate</a>
+                                        ) : (
+                                            <span className="biz-link-pending">Link to be added</span>
+                                        )}
+                                    </li>
+                                </ul>
+                                
+                                <div className="biz-image-container">
+                                    <img src={cert.image} alt={cert.provider} />
                                 </div>
+                                
+                                <p className="biz-logo-text">{cert.provider.split(' ')[0]}</p>
                             </div>
                         </div>
                     );

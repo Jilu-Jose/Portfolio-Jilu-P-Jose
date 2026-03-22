@@ -32,21 +32,21 @@
 .biz-shape-orange {
     position: absolute;
     bottom: 0; right: 0;
-    width: 60%;
-    height: 85px;
+    width: 65%;
+    height: 120px; /* Much taller to encompass text */
     background: linear-gradient(135deg, #ffb800, #ff5722);
-    border-radius: 60px 0 0 0;
+    border-radius: 80px 0 0 0;
     z-index: 2;
     transition: transform 0.5s ease;
 }
 
 .biz-shape-gray {
     position: absolute;
-    bottom: 8px; right: -20px;
-    width: 65%;
-    height: 100px;
-    background: #dcdcdc; /* Shadow layer under orange */
-    border-radius: 60px 0 0 0;
+    bottom: 0; right: 0;
+    width: 72%;
+    height: 140px; /* Taller shadow buffer */
+    background: #dcdcdc;
+    border-radius: 100px 0 0 0;
     z-index: 1;
     box-shadow: inset 0 10px 10px rgba(0,0,0,0.05);
 }
@@ -56,8 +56,8 @@
     content: '';
     position: absolute;
     bottom: 0; left: 0;
-    width: 100%; height: 12px;
-    background: linear-gradient(90deg, #dcdcdc 30%, transparent 80%);
+    width: 40%; height: 12px; /* Limited width so it doesn't poke out early */
+    background: linear-gradient(90deg, #dcdcdc 80%, transparent 100%);
     z-index: 1;
 }
 
@@ -71,17 +71,12 @@
     z-index: 5;
     width: 100%;
     height: 100%;
-    display: flex;
-    justify-content: space-between;
     padding: 25px 20px 20px 30px;
 }
 
-/* Left side (Text & Details) */
-.biz-left {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    flex: 1;
+/* Top Left Text */
+.biz-text-block {
+    width: 65%;
 }
 
 .biz-title {
@@ -102,17 +97,16 @@
 }
 
 .biz-provider {
-    font-size: 0.75rem;
+    font-size: 0.8rem;
     font-weight: 700;
     color: #888888;
-    margin-bottom: 12px;
+    margin-bottom: 15px;
 }
 
 /* Multi-color separator line matching the image */
 .biz-separator {
     display: flex;
     align-items: center;
-    margin-bottom: 15px;
 }
 .bz-line-yellow, .bz-line-orange, .bz-line-dark {
     height: 3px;
@@ -124,85 +118,90 @@
 
 /* Contact / Details List */
 .biz-details {
+    position: absolute;
+    bottom: 25px;
+    left: 42%; /* Positioned centrally, overlapping the curve */
     list-style: none;
     padding: 0;
     margin: 0;
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 12px;
 }
 
 .biz-details li {
     display: flex;
     align-items: center;
     gap: 12px;
-    font-size: 0.7rem;
-    color: #555555;
-    font-weight: 600;
+    font-size: 0.75rem;
+    color: #222222; /* Dark text clearly visible on orange and grey */
+    font-weight: 700;
+    text-shadow: 0 1px 2px rgba(255,255,255,0.2); /* Slight lift */
 }
 
+/* Specific item colors to match the user's mockup closely */
+.biz-details li:nth-child(2) { color: #1a4b6b; } /* Deep bluish tint for Credential ID */
+.biz-details li:nth-child(3) { color: #3b82f6; } /* Highlight Link text */
+
 .biz-icon {
-    font-size: 0.85rem;
-    color: #666666;
+    font-size: 0.95rem;
+    color: #444444;
     background: transparent;
-    width: 15px; /* Ensures vertical alignment */
+    width: 20px;
 }
 
 .biz-link {
-    color: #ff5722;
-    text-decoration: none;
-    font-weight: 700;
+    color: #1a4b6b; /* Sleek color for the active link */
+    text-decoration: underline;
+    font-style: italic;
     transition: color 0.3s;
 }
 
 .biz-link:hover {
-    color: #ffb800;
-    text-decoration: underline;
+    color: #ffffff;
 }
 
 .biz-link-pending {
-    color: #999999;
+    color: #5b7990;
     font-style: italic;
 }
 
-/* Right side (Logo) */
-.biz-right {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    padding-top: 10px;
-    width: 100px;
-}
-
-.biz-logo-container {
-    width: 80px;
-    height: 80px;
+/* Right side Image */
+.biz-image-container {
+    position: absolute;
+    top: 25px;
+    right: 20px;
+    width: 140px; /* Much larger certificate image */
+    height: 90px;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: transparent;
-    border-radius: 50%;
-    margin-bottom: 10px;
+    background: rgba(255, 255, 255, 0.5); /* Soft backing for transparent certs */
+    border-radius: 4px; /* Rectangular bounds */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    border: 1px solid #e0e0e0;
+    padding: 2px;
 }
 
-.biz-logo-container img {
+.biz-image-container img {
     max-width: 100%;
     max-height: 100%;
-    object-fit: contain;
-    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+    object-fit: contain; /* Preserves entire certificate bounds safely */
 }
 
+/* Provider text floating on the orange shape */
 .biz-logo-text {
-    font-size: 0.85rem;
-    font-weight: 800;
-    color: #ff5722;
+    position: absolute;
+    bottom: 40px;
+    right: 25px;
+    font-size: 1rem;
+    font-weight: 900;
+    color: #111111; /* Extremely bold, dark text embedded inside orange */
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
 }
 
 /* Light / Dark Mode Overrides for internal dark theme support securely */
-/* (Currently defaults to gray style to match reference securely) */
 [data-theme="light"] .cert-card-biz {
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
 }
