@@ -20,7 +20,11 @@ if (process.env.MONGO_URI) {
 const app = express();
 const PORT = process.env.PORT || 5001;
 
-app.use(cors());
+app.use(cors({
+    origin: ["https://portfolio-jilu-p-jose.vercel.app", "http://localhost:5173"],
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    credentials: true
+}));
 app.use(express.json());
 
 // Routes
