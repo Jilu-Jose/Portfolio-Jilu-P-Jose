@@ -9,6 +9,13 @@ const MONGO_URI = process.env.MONGO_URI || 'mongodb://127.0.0.1:27017/portfolio'
 
 const projects = [
     {
+        title: 'W.I.K.T.O.R',
+        description: 'A RAG (Retrieval Augmented Generation) model that retrieves information from Wikipedia ,built using langchain and Gemini.',
+        techStack: ['LangChain', 'API', 'GenAI'],
+        image: '/images/RAG.png',
+        githubLink: 'https://github.com/Jilu-Jose/W.I.K.T.O.R-Chatbot'
+    },
+    {
         title: 'N.O.V.A System',
         description: 'Satellite health monitoring & early warning, threat mitigation system.',
         techStack: ['Python', 'Machine Learning', 'API', 'Real-time'],
@@ -60,13 +67,16 @@ const projects = [
         title: 'M.A.G.I.C Telescope',
         description: 'Classification of Gamma and Hadronic Events via Cherenkov Telescope.',
         techStack: ['Python', 'Machine Learning', 'Statistics', 'SQL'],
-        image: '/images/Magic_port.png'
+        image: '/images/Magic_port.png',
+        githubLink: 'https://github.com/Jilu-Jose/M.A.G.I.C-Telescope',
+        liveLink: 'https://magic-telescope.streamlit.app/'
     },
     {
         title: 'Meteorite Landings',
         description: 'Conducted an in-depth research on meteorite landings from data provided by NASA & performed EDA.',
         techStack: ['Python', 'EDA', 'Statistics', 'SQL'],
-        image: '/images/meteorite.png'
+        image: '/images/meteorite.png',
+        githubLink: 'https://github.com/Jilu-Jose/INT-375-Analysis-of-Meteorite-Landings-by-NASA'
     },
     {
         title: 'Stock Price Prediction',
@@ -78,37 +88,30 @@ const projects = [
         title: 'ResumeIt',
         description: 'A NLP (Natural Language Processing) based job classification model, uses regular expressions for cleaning and preprocessing of Resume',
         techStack: ['Scikit-Learn', 'NLP', 'Vector-Data'],
-        image: '/images/resumenlp.jpg'
-    },
-    {
-        title: 'W.I.K.T.O.R',
-        description: 'A RAG (Retrieval Augmented Generation) model that retrieves information from Wikipedia ,built using langchain and Gemini.',
-        techStack: ['LangChain', 'API', 'GenAI'],
-        image: '/images/RAG.png'
+        image: '/images/resumenlp.jpg',
+        githubLink: 'https://github.com/Jilu-Jose/Resume-Classifier-ATS-APP',
+        liveLink: 'https://res-solv.streamlit.app/'
     },
     {
         title: 'A.G.R.I.S.O.L',
         description: 'A regression based model that predicts annual yield based on environmental factors.',
         techStack: ['Flask', 'Scikit-learn', 'Pandas', 'NumPy', 'Matplotlib', 'Seaborn'],
-        image: '/images/AGRISOL.png'
+        image: '/images/AGRISOL.png',
+        githubLink: 'https://github.com/Jilu-Jose/A.G.R.I.S.O.L'
     },
     {
         title: 'Rainfall Prediction',
         description: 'Used ML algorithms to train a model to predict rainfall.',
         techStack: ['Machine Learning', 'Climate', 'SQL'],
-        image: '/images/Rain_port.png'
-    },
-    {
-        title: 'Anomaly Detection Deep Learning Model',
-        description: 'RNN-based anomaly detection using Autoencoders and live display dashboard.',
-        techStack: ['OS', 'Security', 'Deep Learning'],
-        image: '/images/Anomaly_port.png'
+        image: '/images/Rain_port.png',
+        githubLink: 'https://github.com/Jilu-Jose/ML-103-Rain-Prediction-'
     },
     {
         title: 'Iris Flower Classification',
         description: 'Used Logistic regression to classify iris flower species using sepal and petal length and width.',
         techStack: ['Python', 'Scikit-learn', 'Pandas', 'NumPy'],
-        image: '/images/iris_port.png'
+        image: '/images/iris_port.png',
+        githubLink: 'https://github.com/Jilu-Jose/ML-102-IRIS-Dataset-'
     }
 ];
 

@@ -1,26 +1,15 @@
 import { useState } from 'react';
 import './PRD.css';
-import { FaCloudUploadAlt, FaFilePdf, FaDownload } from 'react-icons/fa';
+import { FaFilePdf, FaDownload } from 'react-icons/fa';
 
 const PRD = () => {
-    // Dummy state for uploaded PRDs
+    // State for PRDs - To add real documents, put the PDF files in the frontend/public/prds folder
+    // and update the 'url' property below to point to the file (e.g., '/prds/nova_prd.pdf')
     const [prds, setPrds] = useState([
-        { id: 1, title: 'NOVA Project Requirements', date: 'Oct 12, 2025', size: '2.4 MB' },
-        { id: 2, title: 'S.E.N.T.R.A Architecture Review', date: 'Sep 05, 2025', size: '3.1 MB' },
-        { id: 3, title: 'F.A.L.C.O.N Initial Draft', date: 'Aug 22, 2025', size: '1.8 MB' }
+        { id: 1, title: 'NOVA Project Requirements', date: 'Oct 12, 2025', size: '2.4 MB', url: '/prds/nova_prd.pdf' },
+        { id: 2, title: 'S.E.N.T.R.A Architecture Review', date: 'Sep 05, 2025', size: '3.1 MB', url: '/prds/sentra_prd.pdf' },
+        { id: 3, title: 'F.A.L.C.O.N Initial Draft', date: 'Aug 22, 2025', size: '1.8 MB', url: '/prds/falcon_prd.pdf' }
     ]);
-
-    const handleUpload = (e) => {
-        e.preventDefault();
-        // Just mock upload logic for the UI demonstration
-        const newFile = {
-            id: prds.length + 1,
-            title: 'New Uploaded Document.pdf',
-            date: new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }),
-            size: '1.5 MB'
-        };
-        setPrds([newFile, ...prds]);
-    };
 
     return (
         <div className="prd-page">
@@ -30,18 +19,6 @@ const PRD = () => {
             </div>
 
             <div className="prd-container">
-                {/* Upload Section */}
-                <div className="upload-section glass-panel">
-                    <div className="upload-content">
-                        <FaCloudUploadAlt className="upload-icon" />
-                        <h3>Upload New PRD</h3>
-                        <p>Drag & drop your PDF file here, or click to browse</p>
-                        <button className="btn primary-btn upload-btn" onClick={handleUpload}>
-                            Select File
-                        </button>
-                    </div>
-                </div>
-
                 {/* PRD Grid */}
                 <div className="prd-grid">
                     {prds.map((prd) => (
@@ -54,9 +31,9 @@ const PRD = () => {
                                 </div>
                             </div>
                             <div className="prd-card-footer">
-                                <button className="btn secondary-btn download-btn">
+                                <a href={prd.url} download className="btn secondary-btn download-btn" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px' }}>
                                     <FaDownload /> Download
-                                </button>
+                                </a>
                             </div>
                         </div>
                     ))}
