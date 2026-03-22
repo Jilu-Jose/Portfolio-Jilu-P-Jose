@@ -20,102 +20,218 @@
     margin: 0 auto;
 }
 
-.upload-section {
-    padding: 3rem;
-    border: 2px dashed rgba(255, 122, 0, 0.4);
-    border-radius: 12px;
-    text-align: center;
-    margin-bottom: 4rem;
-    transition: all 0.3s ease;
-    cursor: pointer;
+.biz-layout {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    gap: 3rem;
+    justify-items: center;
 }
 
-.upload-section:hover {
-    border-color: var(--accent-orange);
-    background: rgba(255, 122, 0, 0.05);
+/* Container */
+.biz-card {
+    position: relative;
+    width: 100%;
+    max-width: 440px;
+    height: 260px;
+    background: #ffffff;
+    border-radius: 4px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    display: flex;
+    text-decoration: none;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.biz-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(255, 122, 0, 0.4);
 }
 
-.upload-content {
+/* Left Section */
+.biz-left {
+    width: 35%;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    z-index: 2;
+}
+.biz-logo {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1rem;
+    text-align: center;
+    margin-top: 10px;
+}
+.biz-logo-icon {
+    font-size: 3rem;
+    color: #f38d1d;
+    margin-bottom: 10px;
+}
+.biz-logo-text {
+    font-weight: 800;
+    font-size: 0.8rem;
+    color: #333;
+    line-height: 1.1;
+    letter-spacing: 1px;
 }
 
-.upload-icon {
-    font-size: 4rem;
-    color: var(--accent-orange);
-    margin-bottom: 0.5rem;
-    transition: transform 0.3s ease;
+/* Top Right Ribbon Group */
+.biz-top-ribbon-group {
+    position: absolute;
+    top: 30px;
+    right: 0;
+    width: 65%;
+    height: 50px;
+    display: flex;
+    z-index: 2;
+    overflow: hidden; /* to clip the right edge of ribbon */
 }
 
-.upload-section:hover .upload-icon {
-    transform: translateY(-5px);
+.biz-slash-1 {
+    width: 15px;
+    min-width: 15px;
+    height: 100%;
+    background: #f38d1d;
+    transform: skewX(-30deg);
+    margin-right: 6px;
+    margin-left: 10px; /* pull it in */
 }
-
-.upload-btn {
-    margin-top: 1rem;
+.biz-slash-2 {
+    width: 25px;
+    min-width: 25px;
+    height: 100%;
+    background: #2b2b2b;
+    transform: skewX(-30deg);
+    margin-right: -10px;
+    z-index: 1;
 }
-
-.prd-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 2rem;
-}
-
-.prd-card {
-    padding: 1.5rem;
-    border-radius: 8px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+.biz-ribbon-main {
+    flex: 1;
+    background: #f38d1d;
+    transform: skewX(-30deg);
+    margin-right: -20px; /* pull right edge past the container */
+    padding-left: 20px;
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    justify-content: center;
 }
 
-.prd-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(255, 122, 0, 0.15);
+/* Fix skew for text inside main ribbon */
+.biz-ribbon-text {
+    transform: skewX(30deg);
+    color: white;
+    margin-left: 10px;
+    white-space: nowrap;
 }
-
-.prd-card-header {
-    display: flex;
-    align-items: flex-start;
-    gap: 1rem;
-}
-
-.pdf-icon {
-    font-size: 2.5rem;
-    color: #ff3b3b; /* standard PDF red color */
-}
-
-.prd-info h4 {
+.biz-ribbon-text h3 {
+    margin: 0;
     font-size: 1.1rem;
     font-weight: 700;
-    margin-bottom: 0.3rem;
-    color: var(--text-primary);
+}
+.biz-ribbon-text p {
+    margin: 0;
+    font-size: 0.55rem;
+    font-weight: 400;
+    opacity: 0.9;
+    text-transform: uppercase;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    max-width: 170px;
+}
+
+/* Right content details */
+.biz-details {
+    position: absolute;
+    top: 100px;
+    left: 42%;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    z-index: 2;
+}
+
+.biz-detail-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.biz-detail-icon {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #f38d1d;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.6rem;
+}
+.biz-detail-text {
+    display: flex;
+    flex-direction: column;
+}
+.biz-detail-text span {
+    font-size: 0.65rem;
+    color: #777;
     line-height: 1.3;
 }
 
-.prd-meta {
-    font-size: 0.8rem;
-    color: var(--text-secondary);
+/* Bottom shapes */
+.biz-bottom-orange {
+    position: absolute;
+    bottom: 25px;
+    left: 0;
+    width: 48%; /* Adjust to sit behind the dark footer slants perfectly */
+    height: 40px;
+    background: #f38d1d;
+    clip-path: polygon(0 0, 85% 0, 100% 100%, 0 100%);
+    z-index: 1;
 }
 
-.prd-card-footer {
-    display: flex;
-    justify-content: flex-end;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    padding-top: 1rem;
-}
-
-[data-theme="light"] .prd-card-footer {
-    border-top: 1px solid rgba(0, 0, 0, 0.1);
-}
-
-.download-btn {
+.biz-qr-code {
+    position: absolute;
+    bottom: 15px;
+    left: 40px;
+    width: 60px;
+    height: 60px;
+    background: white;
+    border: 3px solid #f38d1d;
+    z-index: 5;
     display: flex;
     align-items: center;
-    gap: 0.5rem;
-    padding: 0.5rem 1rem;
-    font-size: 0.85rem;
+    justify-content: center;
+    color: #333;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.biz-bottom-dark {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 65%;
+    height: 65px;
+    background: #2b2b2b;
+    clip-path: polygon(15% 0, 100% 0, 100% 100%, 0% 100%);
+    z-index: 6;
+    display: flex;
+    align-items: center;
+    padding-left: 20%;
+    color: white;
+}
+.biz-download-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.8rem;
+    color: white;
+    font-weight: 500;
+}
+.biz-download-btn .dl-icon {
+    width: 22px;
+    height: 22px;
+    background: #f38d1d;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.65rem;
 }

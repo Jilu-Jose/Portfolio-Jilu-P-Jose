@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { FaEnvelope, FaMapMarkerAlt, FaPhone } from 'react-icons/fa';
+import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope } from 'react-icons/fa';
 import './ContactForm.css';
 
 const ContactForm = () => {
@@ -39,45 +39,53 @@ const ContactForm = () => {
             setTimeout(() => setStatus({ type: '', msg: '' }), 6000);
         }
     };
+
     return (
         <section id="contact" className="contact-section">
-            <h2 className="section-title">Get in <span>Touch</span></h2>
-            <div className="contact-container glass-panel">
-                <div className="contact-info animate-fade-in">
-                    <div className="contact-item">
-                        <div className="icon-wrapper"><FaEnvelope /></div>
-                        <p>jilupjose2004@gmail.com</p>
-                    </div>
-                    <div className="contact-item">
-                        <div className="icon-wrapper"><FaMapMarkerAlt /></div>
-                        <p>Kerala, India</p>
-                    </div>
-                    <div className="contact-item">
-                        <div className="icon-wrapper"><FaPhone /></div>
-                        <p>+1 234 567 890</p>
-                    </div>
-                </div>
-                <form className="contact-form animate-fade-in" style={{ animationDelay: '0.2s' }} onSubmit={handleSubmit}>
-                    <div className="input-group">
-                        <input type="text" name="name" placeholder="Name" value={formData.name} onChange={handleChange} required />
-                    </div>
-                    <div className="input-group">
-                        <input type="email" name="email" placeholder="Email" value={formData.email} onChange={handleChange} required />
-                    </div>
-                    <div className="input-group">
-                        <textarea name="message" placeholder="Message" rows="5" value={formData.message} onChange={handleChange} required></textarea>
-                    </div>
-
-                    {status.msg && (
-                        <div className={`form-status ${status.type}`}>
-                            {status.msg}
+            <h2 className="section-title" style={{ marginBottom: '3rem', textAlign: 'center' }}>Get in <span>Touch</span></h2>
+            <div className="contact-wrapper animate-fade-in">
+                <div className="contact-accent-bar"></div>
+                <div className="contact-card">
+                    {/* Left Column */}
+                    <div className="contact-info-col">
+                        <div className="contact-info-item">
+                            <div className="contact-icon"><FaEnvelope /></div>
+                            <div className="contact-text">
+                                <p>jilupjose111@gmail.com</p>
+                            </div>
                         </div>
-                    )}
-
-                    <button type="submit" className="btn btn-primary submit-btn" disabled={isSubmitting}>
-                        {isSubmitting ? 'Sending...' : 'Send Message'}
-                    </button>
-                </form>
+                        <div className="contact-info-item">
+                            <div className="contact-icon"><FaMapMarkerAlt /></div>
+                            <div className="contact-text">
+                                <p>Jalandhar, Punjab</p>
+                            </div>
+                        </div>
+                        <div className="contact-info-item">
+                            <div className="contact-icon"><FaPhoneAlt /></div>
+                            <div className="contact-text">
+                                <p>+91 7503176535</p>
+                            </div>
+                        </div>
+                    </div>
+                    {/* Right Column */}
+                    <form className="contact-form-col" onSubmit={handleSubmit}>
+                        <input type="text" name="name" placeholder="Enter your Name" value={formData.name} onChange={handleChange} required />
+                        <input type="email" name="email" placeholder="Enter a valid email address" value={formData.email} onChange={handleChange} required />
+                        <textarea name="message" placeholder="Enter your message" rows="6" value={formData.message} onChange={handleChange} required></textarea>
+                        
+                        {status.msg && (
+                            <div className={`form-status ${status.type}`}>
+                                {status.msg}
+                            </div>
+                        )}
+                        
+                        <div className="submit-row">
+                            <button type="submit" className="cf-submit-btn" disabled={isSubmitting}>
+                                {isSubmitting ? 'SUBMITTING...' : 'SUBMIT'}
+                            </button>
+                        </div>
+                    </form>
+                </div>
             </div>
         </section>
     );
