@@ -35,22 +35,19 @@ const JobRoles = () => {
                                     <div className="contact-item">
                                         <div className="contact-icon bg-dark"><FaPhoneAlt /></div>
                                         <div className="contact-text">
-                                            <span>+91 98765 43210</span>
-                                            <span>+91 98765 43210</span>
+                                            <span>+91 7503176535</span>
                                         </div>
                                     </div>
                                     <div className="contact-item">
                                         <div className="contact-icon bg-dark"><FaEnvelope /></div>
                                         <div className="contact-text">
-                                            <span>info@jilupjose.com</span>
-                                            <span>www.jilupjose.com</span>
+                                            <span>jilupjose111@gmail.com</span>
                                         </div>
                                     </div>
                                     <div className="contact-item">
                                         <div className="contact-icon bg-red"><FaMapMarkerAlt /></div>
                                         <div className="contact-text">
-                                            <span>Available for</span>
-                                            <span>Remote / Hybrid</span>
+                                            <span>Jalandhar, Punjab</span>
                                         </div>
                                     </div>
                                 </div>

@@ -186,9 +186,13 @@
 .form-status.error { background: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; }
 
 /* Keep white-background cards readable even if dark mode affects global text nodes! */
-.contact-section h2, .contact-section * {
-    color: initial;
+.contact-card, .contact-card * {
+    color: #333333;
 }
 .contact-text p {
-    color: #212529 !important;
+    color: #333333 !important;
+}
+.contact-form-col input,
+.contact-form-col textarea {
+    color: #333333 !important;
 }
