@@ -15,7 +15,7 @@
 
 .roles-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
     gap: 2.5rem;
     max-width: 1200px;
     margin: 0 auto;
@@ -56,7 +56,7 @@
     position: absolute;
     top: 0; left: 0; width: 100%; height: 100%;
     background: linear-gradient(135deg, #ff7a00 0%, #ff7a00 100%);
-    clip-path: polygon(0 0, 60% 0, 75% 50%, 60% 100%, 0 100%);
+    clip-path: polygon(0 0, 56% 0, 66% 50%, 56% 100%, 0 100%);
     z-index: 2;
     transition: clip-path 0.4s ease;
 }
@@ -65,28 +65,28 @@
     position: absolute;
     top: 0; left: 0; width: 100%; height: 100%;
     background: #ffffff;
-    clip-path: polygon(0 0, 50% 0, 65% 50%, 50% 100%, 0 100%);
+    clip-path: polygon(0 0, 48% 0, 58% 50%, 48% 100%, 0 100%);
     z-index: 3;
-    padding: 25px; /* content padding */
+    padding: 20px 15px; /* compact padding to maximize text space */
     transition: clip-path 0.4s ease;
 }
 
 .role-card-lightdark:hover .rc-red-layer {
-    clip-path: polygon(0 0, 62% 0, 77% 50%, 62% 100%, 0 100%);
+    clip-path: polygon(0 0, 58% 0, 68% 50%, 58% 100%, 0 100%);
 }
 
 .role-card-lightdark:hover .rc-white-layer {
-    clip-path: polygon(0 0, 53% 0, 68% 50%, 53% 100%, 0 100%);
+    clip-path: polygon(0 0, 50% 0, 60% 50%, 50% 100%, 0 100%);
 }
 
 /* White Layer Content */
 .rc-header { 
     margin-bottom: 25px; 
-    max-width: 50%; /* Prevent text from spilling past the visual clip-path */
+    max-width: 53%; /* Prevent text from spilling past the visual clip-path */
 }
 
 .rc-title-ld {
-    font-size: 1.15rem;
+    font-size: 1.1rem;
     font-weight: 800;
     text-transform: uppercase;
     margin-bottom: 4px;
@@ -105,7 +105,7 @@
     display: flex;
     flex-direction: column;
     gap: 12px;
-    max-width: 53%; /* Keep contact info bound within the white background */ 
+    max-width: 53%; /* Keep contact info securely within the white background boundary */ 
 }
 
 .contact-item {
@@ -132,19 +132,21 @@
 
 .contact-text {
     display: flex; flex-direction: column;
-    font-size: 0.7rem; color: #444; line-height: 1.3; font-weight: 700;
-    word-break: break-word; /* Allows email to wrap safely */
+    font-size: 0.65rem; color: #444; line-height: 1.3; font-weight: 700;
+    word-break: normal; /* Do not violently break standard text */
+    overflow-wrap: break-word; /* Only break super long strings strictly when constrained */
 }
 
 /* Dark Side Background (right side) */
 .rc-dark-content {
     position: absolute;
     top: 0; right: 0;
-    width: 45%; height: 100%;
-    z-index: 1;
+    width: 34%; /* Occupies the exact remainder, naturally dodging the orange layer completely */
+    height: 100%;
+    z-index: 5; /* Ensure it stays safely atop the base but avoids weird overlaps */
     display: flex; flex-direction: column;
     align-items: center; justify-content: center;
-    padding: 20px 25px 20px 10px;
+    padding: 20px 10px;
     color: white;
 }
 
