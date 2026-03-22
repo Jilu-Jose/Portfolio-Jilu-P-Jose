@@ -285,25 +285,56 @@
     .main-heading { font-size: 3rem; }
     .hero-content-new { max-width: 60%; }
     .blob-background { width: 350px; height: 350px; }
+    .hero-person-img { width: 300px; height: 300px; }
 }
 
 @media (max-width: 768px) {
     .hero-section-new {
         flex-direction: column;
-        padding-top: 100px;
+        padding-top: 120px; /* Leave space for mobile navbar */
         text-align: center;
+        padding-left: 5%;
+        padding-right: 5%;
     }
+    .main-heading { font-size: 2.5rem; }
     .hero-content-new {
         max-width: 100%;
         margin-bottom: 50px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
     .hero-actions {
         justify-content: center;
         flex-direction: column;
         gap: 1.5rem;
     }
+    .social-links-inline {
+        justify-content: center;
+        margin-top: 10px;
+    }
     .hero-image-new {
         height: auto;
         padding-bottom: 80px;
+        padding-top: 20px;
     }
+    .blob-background {
+        width: 280px;
+        height: 280px;
+    }
+    .blob-background::before {
+        width: 220px;
+        height: 220px;
+        top: -10px;
+        left: -20px;
+    }
+    .hero-person-img {
+        width: 250px;
+        height: 250px;
+    }
+    
+    /* Safely anchor floating cards inside the mobile view so they don't force horizonal scrolling */
+    .fl-projects { top: -20px; left: 0px; transform: scale(0.85); }
+    .fl-satisfaction { top: auto; bottom: 20px; right: 0px; transform: scale(0.85); }
+    .fl-designer { display: none; /* Hide the third card to prevent clutter on small phones */ }
 }

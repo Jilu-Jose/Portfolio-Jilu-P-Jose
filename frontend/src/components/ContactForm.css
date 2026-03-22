@@ -5,6 +5,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    overflow: hidden; /* Guarantee no horizontal scrollbars from the accent bar */
 }
 
 .contact-wrapper {
@@ -158,6 +159,9 @@
 
 /* Responsive */
 @media (max-width: 768px) {
+    .contact-section {
+        padding: 4rem 5%;
+    }
     .contact-card {
         flex-direction: column;
     }
@@ -166,10 +170,10 @@
         width: 105%;
     }
     .contact-info-col {
-        padding: 2.5rem;
+        padding: 2.5rem 1.5rem;
     }
     .contact-form-col {
-        padding: 2.5rem;
+        padding: 2.5rem 1.5rem;
     }
 }
 
