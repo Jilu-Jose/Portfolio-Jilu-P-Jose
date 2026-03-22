@@ -8,7 +8,7 @@ const ProjectsGrid = () => {
     const [startIndex, setStartIndex] = useState(0);
 
     useEffect(() => {
-        fetch('http://localhost:5001/api/projects')
+        fetch('https://portfolio-jilu-p-jose.onrender.com/api/projects')
             .then(res => res.json())
             .then(data => {
                 setProjects(data);

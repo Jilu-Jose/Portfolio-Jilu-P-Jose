@@ -6,10 +6,10 @@ const Models = () => {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        // fetch('http://localhost:5001/api/models')
+        // fetch('https://portfolio-jilu-p-jose.onrender.com/api/models')
         //   .then(res => res.json())
         //   .then(data => setModels(data))
-        fetch('http://localhost:5001/api/models')
+        fetch('https://portfolio-jilu-p-jose.onrender.com/api/models')
             .then(res => res.json())
             .then(data => {
                 setModels(data);
