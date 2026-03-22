@@ -17,7 +17,7 @@ const ContactForm = () => {
         setStatus({ type: 'info', msg: 'Sending message...' });
 
         try {
-            const response = await fetch('http://localhost:5001/api/contact', {
+            const response = await fetch('https://portfolio-jilu-p-jose.onrender.com/api/contact', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(formData)
