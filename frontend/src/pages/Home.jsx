@@ -5,6 +5,7 @@ import JobRoles from '../components/JobRoles';
 import ProjectsGrid from '../components/ProjectsGrid';
 import Certifications from '../components/Certifications';
 import Extracurriculars from '../components/Extracurriculars';
+import Education from '../components/Education';
 import ContactForm from '../components/ContactForm';
 
 const Home = () => {
@@ -17,6 +18,7 @@ const Home = () => {
             <ProjectsGrid />
             <Certifications />
             <Extracurriculars />
+            <Education />
             <ContactForm />
         </div>
     );
