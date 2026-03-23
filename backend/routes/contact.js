@@ -27,16 +27,19 @@ router.post('/', async (req, res) => {
         if (process.env.EMAIL_USER && process.env.EMAIL_PASS) {
             const transporter = nodemailer.createTransport({
                 host: 'smtp.gmail.com',
-                port: 587,
-                secure: false, 
-                family: 4, // Force IPv4 to avoid ENETUNREACH
+                port: 465,
+                secure: true, 
+                family: 4, 
                 auth: {
                     user: process.env.EMAIL_USER,
                     pass: process.env.EMAIL_PASS
                 },
                 tls: {
                     rejectUnauthorized: false
-                }
+                },
+                connectionTimeout: 10000, // 10 seconds
+                greetingTimeout: 10000,
+                socketTimeout: 10000
             });
 
             const mailOptions = {
@@ -54,18 +57,17 @@ router.post('/', async (req, res) => {
                        </div>`
             };
 
-            // Await this to ensure Render doesn't kill the thread before finishing
+            // Await with timeout-safe handling
             try {
                 await transporter.sendMail(mailOptions);
                 console.log("Email sent successfully via Nodemailer");
             } catch (err) {
-                console.error("Nodemailer failed to send email:", err);
+                console.error("Nodemailer failed to send email (Silently continuing):", err);
+                // We do NOT return an error here as per user request
             }
-        } else {
-            console.warn("EMAIL_USER or EMAIL_PASS not set in .env. Email dispatch skipped.");
         }
 
-        // Instantly return success to the user!
+        // Return success regardless of email outcome, as long as it reaches this point
         res.status(201).json({ success: true, message: 'Message sent successfully!' });
     } catch (error) {
         console.error('Contact route error:', error);
