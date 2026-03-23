@@ -23,23 +23,26 @@ router.post('/', async (req, res) => {
             }
         }
 
-        // Send Email Notification (in background to prevent hanging the frontend)
+        // Send Email Notification
         if (process.env.EMAIL_USER && process.env.EMAIL_PASS) {
             const transporter = nodemailer.createTransport({
-                service: 'gmail',
+                host: 'smtp.gmail.com',
+                port: 587,
+                secure: false, 
+                family: 4, // Force IPv4 to avoid ENETUNREACH
                 auth: {
                     user: process.env.EMAIL_USER,
                     pass: process.env.EMAIL_PASS
                 },
                 tls: {
-                    rejectUnauthorized: false // Helps avoid some strict server certificate issues
+                    rejectUnauthorized: false
                 }
             });
 
             const mailOptions = {
                 from: process.env.EMAIL_USER,
-                to: process.env.EMAIL_USER, // sends to the owner
-                replyTo: email,             // allows replying directly to the sender
+                to: process.env.EMAIL_USER, 
+                replyTo: email,             
                 subject: `New Portfolio Contact: ${name}`,
                 text: `You have received a new contact submission from your portfolio!\n\nName: ${name}\nEmail: ${email}\n\nMessage:\n${message}`,
                 html: `<div style="font-family: Arial, sans-serif; padding: 20px;">
@@ -51,10 +54,13 @@ router.post('/', async (req, res) => {
                        </div>`
             };
 
-            // Do not 'await' this! Let it process asynchronously so the user isn't stuck waiting for SMTP to connect.
-            transporter.sendMail(mailOptions).catch(err => {
-                console.error("Nodemailer failed to send email in background:", err);
-            });
+            // Await this to ensure Render doesn't kill the thread before finishing
+            try {
+                await transporter.sendMail(mailOptions);
+                console.log("Email sent successfully via Nodemailer");
+            } catch (err) {
+                console.error("Nodemailer failed to send email:", err);
+            }
         } else {
             console.warn("EMAIL_USER or EMAIL_PASS not set in .env. Email dispatch skipped.");
         }
